@@ -1,0 +1,16 @@
+source ~/.mutt/conf/tilda.password
+
+set from = "meka@tilda.center"
+set realname = "Goran Mekić"
+set imap_user = "meka@tilda.center"
+set smtp_url = smtp://$imap_user:$imap_pass@mail.tilda.center:587
+set spoolfile = "+tilda/INBOX"
+set record = "+tilda/Sent"
+set postponed = "+tilda/Drafts"
+
+set pgp_sign_as = 7A2FACB6
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted = yes
+set pgp_verify_sig = yes
+set pgp_auto_decode = yes

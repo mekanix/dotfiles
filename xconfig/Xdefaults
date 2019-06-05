@@ -1,0 +1,98 @@
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #85cc55
+
+
+! Dark
+
+#define S_base03        #191919
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #5080ff
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+URxvt*scrollBar: false
+URxvt*perl-ext: default,matcher
+URxvt*url-launcher: browser.sh
+URxvt*matcher.button: 1
+URxvt*visualBell: true
+URxvt*urgentOnBell:  true
+URxvt*matcher.pattern.1:  \\bhttp(\|s)\://\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+URxvt*fading:                  40
+URxvt*fadeColor:               S_base03
+URxvt*color4:                  S_blue
+URxvt*background:              S_base03
+URxvt*foreground:              #bbbbbb
+
+! URxvt*.font: xft:Monospace:*:size=24
+
+
+XTerm*scrollBar: false
+XTerm*perl-ext: default,matcher
+XTerm*url-launcher: browser.sh
+XTerm*matcher.button: 1
+XTerm*visualBell: true
+XTerm*urgentOnBell:  true
+XTerm*matcher.pattern.1:  \\bhttp(\|s)\://\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+XTerm*fading:                  40
+XTerm*fadeColor:               S_base03
+XTerm*color4:                  S_blue
+XTerm*background:              S_base03
+XTerm*foreground:              #bbbbbb
+XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+*VT100.Translations: #override \n\
+  Alt <Key>o: exec-formatted("browser.sh '%t'", PRIMARY) select-start() select-end()
+
+
+! XTerm*.font: xft:Monospace:*:size=24
+
+
+! Based on Solarized
+!
+! http://ethanschoonover.com/solarized
+
+
+
+! *color0:                  S_base02
+! *color1:                  S_red
+! *color2:                  S_green
+! *color3:                  S_yellow
+! *color5:                  S_magenta
+! *color6:                  S_cyan
+! *color7:                  S_base2
+! *color9:                  S_orange
+! *color8:                  S_base03
+! *color10:                 S_green
+! *color11:                 S_base00
+! *color12:                 S_base0
+! *color13:                 S_violet
+! *color14:                 S_base1
+! *color15:                 S_base3
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! User: meka
+! ------------------------------------------------------------------------------
+! Color scheme for normal row
+rofi.color-normal:                   #000000,#505050,#000000,#586e75,#000000
+! Color scheme for urgent row
+rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
+! Color scheme for active row
+rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
+! Color scheme window
+rofi.color-window:                   #101010,#000000
+! Separator style (none, dash, solid)
+rofi.separator-style:                dash

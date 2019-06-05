@@ -1,0 +1,1 @@
+send-hook "!~l ~t meka@lugons\\.org" "set pgp_autoencrypt pgp_autosign"

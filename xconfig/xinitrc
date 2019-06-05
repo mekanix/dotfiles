@@ -1,0 +1,33 @@
+#!/bin/sh
+
+export BROWSER=~/bin/browser.sh
+export EDITOR=~/bin/editor.sh
+export PATH="${HOME}/bin:${PATH}"
+
+eval $(gpg-agent --daemon)
+eval $(ssh-agent)
+
+# Start audio before the apps
+mixer pcm 100 vol 100
+
+# Keyboard setup
+xset r rate 180 30
+setxkbmap -option "grp:lswitch" "us,hr"
+xrdb ~/.Xdefaults
+xmodmap ~/.xmodmap
+
+# Apps
+urxvt -name weechat -e ~/bin/weechat.sh &
+keepassxc &
+unclutter &
+xautolock -time 10 -locker ~/bin/slock.sh &
+syncthing &
+quiterrs &
+~/bin/mail.sh &
+offlineimap &
+quiterss &
+(sleep 2 && xsetroot) &
+gajim &
+cat /dev/umidi0.0 >/dev/umidi1.0 &
+
+exec i3

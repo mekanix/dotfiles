@@ -1,0 +1,50 @@
+" Let Vim and NeoVim shares the same plugin directory.
+" Comment it out if you don't like
+let g:spacevim_plug_home = '~/.vim/plugged'
+
+" Enable the existing layers in space-vim
+function! Layers()
+
+  " Default layers
+  Layer 'better-defaults'
+  Layer 'c-c++'
+  Layer 'code-snippets'
+  Layer 'editing'
+  Layer 'file-manager'
+  Layer 'fzf'
+  Layer 'html'
+  Layer 'javascript'
+  Layer 'markdown'
+  Layer 'programming'
+  Layer 'python'
+  Layer 'syntax-checking'
+  Layer 'text-align'
+  Layer 'tmux'
+  Layer 'unite'
+  Layer 'which-key'
+  Layer 'ycmd'
+
+endfunction
+
+" Add your own plugins
+function! UserInit()
+  " The default leader key is space key.
+  " Uncomment the line below and modify "<\Space>" if you prefer another
+  " let g:spacevim_leader = "<\Space>"
+
+  " The default local leader key is comma.
+  " Uncomment the line below and modify ',' if you prefer another
+  " let g:spacevim_localleader = ','
+
+  " Install personal plugins
+  " Plug 'hecal3/vim-leader-guide'
+endfunction
+
+" Override the default settings as well as adding extras
+function! UserConfig()
+  autocmd BufWritePre * :%s/\s\+$//e
+  let g:UltiSnipsEditSplit="vertical"
+  let g:gutentags_ctags_executable = "uctags"
+
+  autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+endfunction

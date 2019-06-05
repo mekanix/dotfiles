@@ -1,0 +1,40 @@
+data.location=~/.task
+# include /usr/local/share/doc/task/rc/dark-yellow-green.theme
+# include /usr/local/share/doc/task/rc/holidays.en-US.rc
+weekstart=monday
+calendar.holidays=full
+calendar.details=full
+color=on
+journal.time=on
+taskd.server=freecinc.com:53589
+taskd.key=\/home\/meka\/.task\/freecinc_265f3bba.key.pem
+taskd.certificate=\/home\/meka\/.task\/freecinc_265f3bba.cert.pem
+taskd.ca=\/home\/meka\/.task\/freecinc_265f3bba.ca.pem
+taskd.credentials=FreeCinc\/freecinc_265f3bba\/a2b3e64f-cc6b-4ce9-8d58-76e2ab9816d6
+default.project=home
+default.command=list
+
+# Bugwarrior UDAs
+uda.githubcreatedon.type=date
+uda.githubcreatedon.label=Github Created
+uda.githubtitle.type=string
+uda.githubtitle.label=Github Title
+uda.githubnumber.type=numeric
+uda.githubnumber.label=Github Issue/PR #
+uda.githubbody.type=string
+uda.githubbody.label=Github Body
+uda.githubrepo.type=string
+uda.githubrepo.label=Github Repo Slug
+uda.githuburl.type=string
+uda.githuburl.label=Github URL
+uda.githubupdatedat.type=date
+uda.githubupdatedat.label=Github Updated
+uda.githubtype.type=string
+uda.githubtype.label=Github Type
+uda.githubmilestone.type=numeric
+uda.githubmilestone.label=Github Milestone
+# END Bugwarrior UDAs
+default.due=today
+
+report.list.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description.count,urgency
+report.long.sort=start-,due+,project+/,urgency-

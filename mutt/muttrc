@@ -1,0 +1,29 @@
+source ~/.mutt/conf/solarized-dark-256.muttrc
+source ~/.mutt/conf/sidebar.muttrc
+source ~/.mutt/conf/gpg.muttrc
+source ~/.mutt/conf/mailboxes.muttrc
+source ~/.mutt/conf/headers.muttrc
+source ~/.mutt/conf/tilda.muttrc
+source ~/.mutt/conf/macros.muttrc
+source ~/.mutt/conf/khard.muttrc
+
+set mbox_type = Maildir
+set sort = threads
+set strict_threads = yes
+set sort_aux = last-date-received
+set mail_check = 60
+set timeout = 10
+set send_charset = "utf-8"
+set sendmail_wait = -1
+set mime_forward = yes
+set mime_forward_rest = yes
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+set pager_index_lines = "20"
+hdr_order From: Date: To: Cc: Subject:
+
+folder-hook ~/Mail/tilda/* source ~/.mutt/conf/tilda.muttrc
+folder-hook ~/Mail/pyser/* source ~/.mutt/conf/pyser.muttrc
+set header_cache="$HOME/.mutt/header_cache"
