@@ -6,6 +6,7 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 function! Layers()
 
   " Default layers
+  Layer 'auto-completion'
   Layer 'better-defaults'
   Layer 'c-c++'
   Layer 'code-snippets'
@@ -14,15 +15,14 @@ function! Layers()
   Layer 'fzf'
   Layer 'html'
   Layer 'javascript'
+  Layer 'lsp'
   Layer 'markdown'
   Layer 'programming'
   Layer 'python'
   Layer 'syntax-checking'
   Layer 'text-align'
   Layer 'tmux'
-  Layer 'unite'
   Layer 'which-key'
-  Layer 'ycmd'
 
 endfunction
 
@@ -45,6 +45,7 @@ function! UserConfig()
   autocmd BufWritePre * :%s/\s\+$//e
   let g:UltiSnipsEditSplit="vertical"
   let g:gutentags_ctags_executable = "uctags"
+  let g:spacevim_lsp_engine = 'coc'
 
   autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 endfunction
