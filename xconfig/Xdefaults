@@ -36,7 +36,7 @@ URxvt*color4:                  S_blue
 URxvt*background:              S_base03
 URxvt*foreground:              #bbbbbb
 
-! URxvt*.font: xft:Monospace:*:size=24
+! URxvt*.font: xft:Monospace:*:size=16
 
 
 XTerm*scrollBar: false
