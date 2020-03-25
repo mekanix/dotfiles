@@ -100,7 +100,6 @@ mode "resize" {
         bindsym Alt_R resize shrink width 10 px or 10 ppt
         bindsym Super_R resize grow height 10 px or 10 ppt
         bindsym Print resize shrink height 10 px or 10 ppt
-        bindsym (null) resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

@@ -28,6 +28,5 @@ offlineimap &
 quiterss &
 (sleep 2 && xsetroot) &
 gajim &
-cat /dev/umidi0.0 >/dev/umidi1.0 &
 
 exec i3

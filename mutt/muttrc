@@ -17,6 +17,7 @@ set send_charset = "utf-8"
 set sendmail_wait = -1
 set mime_forward = yes
 set mime_forward_rest = yes
+set folder = "~/Mail"
 
 auto_view text/html
 alternative_order text/plain text/enriched text/html
