@@ -17,12 +17,11 @@ xrdb ~/.Xdefaults
 xmodmap ~/.xmodmap
 
 # Apps
-urxvt -name weechat -e ~/bin/weechat.sh &
+alacritty --class weechat -e ~/bin/weechat.sh &
 keepassxc &
 unclutter &
 xautolock -time 10 -locker ~/bin/slock.sh &
 syncthing &
-quiterrs &
 ~/bin/mail.sh &
 offlineimap &
 quiterss &
