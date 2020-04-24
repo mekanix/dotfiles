@@ -7,6 +7,7 @@ set smtp_url = smtp://$imap_user:$imap_pass@mail.tilda.center:587
 set spoolfile = "+tilda/INBOX"
 set record = "+tilda/Sent"
 set postponed = "+tilda/Drafts"
+set hostname = "tilda.center"
 
 set pgp_sign_as = 7A2FACB6
 set crypt_autosign = yes
