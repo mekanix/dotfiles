@@ -9,3 +9,5 @@
     wdiff = diff --word-diff=color
 [fetch]
     prune = true
+[pull]
+    rebase = false

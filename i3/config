@@ -123,7 +123,6 @@ bindsym $mod+b exec ~/bin/browser.sh
 bindsym $mod+a exec rofi -show window -font "snap 10"
 bindsym $mod+s exec rofi -show ssh -font "snap 10"
 bindsym $mod+d exec rofi -show run -font "snap 10"
-bindsym $mod+z exec rofi -show calc -font "snap 10" -modi calc -no-show-match -no-sort -terse -calc-command "echo -n '{result}' | xclip"
 
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
