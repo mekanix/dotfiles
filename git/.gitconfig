@@ -10,4 +10,4 @@
 [fetch]
     prune = true
 [pull]
-	rebase = false
+    rebase = false
