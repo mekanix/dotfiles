@@ -11,4 +11,4 @@ set -xg EXPAT_CFLAGS -I/usr/local/include
 set -xg EXPAT_LDFLAGS -L/usr/local/lib
 set -xg ZITA_CPPFLAGS -I/usr/local/include
 set -xg ZITA_LDFLAGS -L/usr/local/lib
-./configure --with-test --enable-lv2 --enable-output-oss
+./configure --with-test --enable-lv2 --enable-output-oss --with-debug

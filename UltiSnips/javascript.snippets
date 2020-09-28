@@ -1,0 +1,52 @@
+snippet react "Basic React class"
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import styles from './styles'
+
+
+class $1 extends React.Component {
+  render() {
+    return (
+	    $0
+    )
+  }
+}
+
+
+$1.propTypes = {
+}
+
+
+export default $1
+endsnippet
+
+
+snippet freenit "Basic Freenit class"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {
+  // Paper,
+} from '@material-ui/core'
+
+import Template from 'templates/default/detail'
+import styles from './styles'
+
+
+class $1 extends React.Component {
+  render() {
+    return (
+      <Template>
+	      $0
+      </Template>
+    )
+  }
+}
+
+
+$1.propTypes = {
+}
+
+
+export default withStore($1)
+endsnippet

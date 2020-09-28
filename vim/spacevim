@@ -6,12 +6,13 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 function! Layers()
 
   " Default layers
-  Layer 'auto-completion'
+  Layer 'deoplete'
   Layer 'better-defaults'
   Layer 'c-c++'
   Layer 'code-snippets'
   Layer 'editing'
   Layer 'file-manager'
+  Layer 'formatting'
   Layer 'fzf'
   Layer 'html'
   Layer 'javascript'
@@ -43,11 +44,11 @@ endfunction
 " Override the default settings as well as adding extras
 function! UserConfig()
   autocmd BufWritePre * :%s/\s\+$//e
-  let g:UltiSnipsEditSplit="vertical"
-  let g:gutentags_ctags_executable = "uctags"
+  let g:UltiSnipsEditSplit='vertical'
+  let g:gutentags_ctags_executable = 'uctags'
   let g:spacevim_lsp_engine = 'coc'
+  let g:UltiSnipsExpandTrigger = '<tab>'
   set cursorcolumn
   set colorcolumn=80
-
   autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 endfunction
