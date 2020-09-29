@@ -53,7 +53,7 @@ endsnippet
 
 
 snippet store "Freenit based store class"
-export default class $1Store {
+export default class ${1/\w+\s*/\u$0/}Store {
   constructor(detail, list) {
     this.detail = detail[0]
     this.setDetail = detail[1]
@@ -63,7 +63,7 @@ export default class $1Store {
 
   fetchAll = async () => {
     try {
-      const response = await window.rest.get('/$2s')
+      const response = await window.rest.get('/$1s')
       const result = {
         ...response.data,
         ok: true
@@ -80,7 +80,7 @@ export default class $1Store {
 
   fetch = async (id) => {
     try {
-      const response = await window.rest.get(\`/$2s/${id}\`)
+      const response = await window.rest.get(\`/$1s/${id}\`)
       const result = {
         ...response.data,
         ok: true
@@ -97,7 +97,7 @@ export default class $1Store {
 
   edit = async (id, data) => {
     try {
-      const response = await window.rest.patch(\`/$2s/${id}\`, data)
+      const response = await window.rest.patch(\`/$1s/${id}\`, data)
       const result = {
         ...response.data,
         ok: true
@@ -114,7 +114,7 @@ export default class $1Store {
 
   create = async (data) => {
     try {
-      const response = await window.rest.post('/$2s', data)
+      const response = await window.rest.post('/$1s', data)
       const result = {
         ...response.data,
         ok: true
@@ -131,7 +131,7 @@ export default class $1Store {
 
   remove = async (id) => {
     try {
-      const response = await window.rest.delete(\`/$2s/${id}\`)
+      const response = await window.rest.delete(\`/$1s/${id}\`)
       const result = {
         ...response.data,
         ok: true
@@ -144,6 +144,18 @@ export default class $1Store {
         ok: false,
       }
     }
+  }
+}
+endsnippet
+
+
+snippet fetch "Async fetch function"
+$1 = async (${4:id}) => {
+  const { $2, notification } = this.props.store
+  const response = await $2.$3($4)
+  if (!response.ok) {
+    const error = errors(response)
+    notification.show(error.message)
   }
 }
 endsnippet

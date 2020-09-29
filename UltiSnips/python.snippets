@@ -1,0 +1,91 @@
+snippet freenit "Five basic methods"
+from flask_smorest import Blueprint, abort
+from freenit.api.methodviews import ProtectedMethodView
+from freenit.schemas.paging import PageInSchema, paginate
+
+from ..models.$1 import ${1/\w+\s*/\u$0/}
+from ..schemas.$1 import ${1/\w+\s*/\u$0/}PageOutSchema, ${1/\w+\s*/\u$0/}Schema, ${1/\w+\s*/\u$0/}CountSchema
+
+blueprint = Blueprint('$1s', '$1s')
+
+
+@blueprint.route('', endpoint='list')
+class ${1/\w+\s*/\u$0/}ListAPI(ProtectedMethodView):
+    @blueprint.arguments(PageInSchema(), location='headers')
+    @blueprint.response(${1/\w+\s*/\u$0/}PageOutSchema)
+    def get(self, pagination):
+        """List $1s"""
+        query = ${1/\w+\s*/\u$0/}.select()
+        return paginate(query, pagination)
+
+    @blueprint.arguments(${1/\w+\s*/\u$0/}Schema)
+    @blueprint.response(${1/\w+\s*/\u$0/}Schema)
+    def post(self, args):
+        """Create $1"""
+        $1 = ${1/\w+\s*/\u$0/}(**args)
+        $1.save()
+        return $1
+
+
+@blueprint.route('/<int:$1_id>', endpoint='detail')
+class ${1/\w+\s*/\u$0/}API(ProtectedMethodView):
+    @blueprint.response(${1/\w+\s*/\u$0/}Schema)
+    def get(self, $1_id):
+        """Get $1 details"""
+        try:
+            $1 = ${1/\w+\s*/\u$0/}.get(id=$1_id)
+        except ${1/\w+\s*/\u$0/}.DoesNotExist:
+            abort(404, message='No such $1')
+        return $1
+
+    @blueprint.arguments(${1/\w+\s*/\u$0/}Schema(partial=True))
+    @blueprint.response(${1/\w+\s*/\u$0/}Schema)
+    def patch(self, args, $1_id):
+        """Edit $1 details"""
+        try:
+            $1 = ${1/\w+\s*/\u$0/}.get(id=$1_id)
+        except ${1/\w+\s*/\u$0/}.DoesNotExist:
+            abort(404, message='No such $1')
+        for field in args:
+            setattr($1, field, args[field])
+        $1.save()
+        return $1
+
+    @blueprint.response(${1/\w+\s*/\u$0/}Schema)
+    def delete(self, $1_id):
+        """Delete $1"""
+        try:
+            $1 = ${1/\w+\s*/\u$0/}.get(id=$1_id)
+        except ${1/\w+\s*/\u$0/}.DoesNotExist:
+            abort(404, message='No such $1')
+        $1.delete_instance()
+        return $1
+endsnippet
+
+
+snippet model "Basic PeeWee model"
+from freenit.db import db
+from peewee import TextField
+
+Model = db.Model
+
+
+class $1(Model):
+    $0
+endsnippet
+
+
+snippet schema "Basic model schema"
+import sys
+from freenit.schemas.base import BaseSchema
+from freenit.schemas.paging import PageOutSchema
+from marshmallow import fields
+
+
+class $1Schema(BaseSchema):
+    id = fields.Integer(description='ID', dump_only=True)
+    $0
+
+
+PageOutSchema($1Schema, sys.modules[__name__])
+endsnippet
