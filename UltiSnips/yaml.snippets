@@ -1,0 +1,14 @@
+snippet package "Install system packages"
+- name: install $1 packages
+  with_items: "{{ $1_packages }}"
+  package:
+    name: "{{ item.name }}"
+endsnippet
+
+
+snippet service "System service"
+- name: ${1:restart} $2
+  service:
+    name: $2
+    state: $1ed
+endsnippet
