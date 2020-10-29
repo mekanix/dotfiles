@@ -61,9 +61,16 @@ export default class ${1/\w+\s*/\u$0/}Store {
     this.setList = list[1]
   }
 
-  fetchAll = async () => {
+  fetchAll = async (page = 0, perpage = 10) => {
     try {
-      const response = await window.rest.get('/$1s')
+      const response = await window.rest.get(
+        '/$1s',
+        {
+          headers: {
+            Page: page,
+            PerPage: perpage,
+          },
+        },
       const result = {
         ...response.data,
         ok: true
