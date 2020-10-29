@@ -149,13 +149,13 @@ export default class ${1/\w+\s*/\u$0/}Store {
 endsnippet
 
 
-snippet fetch "Async fetch function"
-$1 = async (${4:id}) => {
-  const { $2, notification } = this.props.store
-  const response = await $2.$3($4)
+snippet fetch "Freenit async function to fetch from store"
+${1:const fetch} = async (${2:id}) => {
+  const { ${3:item}, notification } = this.props.store
+  const response = await $3.${4:get}(${5:$2})
   if (!response.ok) {
     const error = errors(response)
-    notification.show(error.message)
+    notification.show(\`Error executing ${1/.*?\s+(\S+)$/$1/}: ${error.message}\`)
   }
 }
 endsnippet
