@@ -1,0 +1,16 @@
+source ~/.mutt/conf/synergysports.password
+
+set from = "goran.mekic@synergysports.com"
+set realname = "Goran Mekić"
+set imap_user = "goran.mekic@synergysports.com"
+set smtp_url = smtp://$imap_user:$imap_pass@outlook.office365.com:587
+set spoolfile = "+synergysports/INBOX"
+set record = "+synergysports/Sent"
+set postponed = "+synergysports/Drafts"
+set hostname = "office.com"
+
+set crypt_autosign = no
+set crypt_replyencrypt = no
+set crypt_replysignencrypted = no
+set pgp_verify_sig = no
+set pgp_auto_decode = no
