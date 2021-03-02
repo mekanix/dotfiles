@@ -1,0 +1,58 @@
+mailboxes \
+    "+pyser/Bank" \
+    "+pyser/Deleted Items" \
+    "+pyser/Drafts" \
+    "+pyser/Eventbrite" \
+    "+pyser/INBOX" \
+    "+pyser/Junk E-mail" \
+    "+pyser/Queue" \
+    "+pyser/Sent" \
+    "+pyser/Spam" \
+    "+pyser/Trash" \
+    "+pyser/python" \
+    \
+    "+tilda/Ansible" \
+    "+tilda/Archive" \
+    "+tilda/BSD" \
+    "+tilda/BSD/Current" \
+    "+tilda/BSD/Multimedia" \
+    "+tilda/BSD/Network" \
+    "+tilda/BSD/Rc" \
+    "+tilda/BSD/USB" \
+    "+tilda/BSD/Virtualization" \
+    "+tilda/BSD/Wireless" \
+    "+tilda/BSD/ipfw" \
+    "+tilda/BSD/pf" \
+    "+tilda/Bank" \
+    "+tilda/Business" \
+    "+tilda/Business/Firebird Networks" \
+    "+tilda/CBSD" \
+    "+tilda/Deleted Items" \
+    "+tilda/Drafts" \
+    "+tilda/Eventbrite" \
+    "+tilda/FOSDEM" \
+    "+tilda/Hack" \
+    "+tilda/INBOX" \
+    "+tilda/Junk E-mail" \
+    "+tilda/NGI" \
+    "+tilda/PySer" \
+    "+tilda/Queue" \
+    "+tilda/Sent" \
+    "+tilda/Spam" \
+    "+tilda/Trash" \
+    "+tilda/python" \
+    \
+    "+synergysports/INBOX" \
+    "+synergysports/Archive" \
+    "+synergysports/Calendar" \
+    "+synergysports/Contacts" \
+    "+synergysports/Conversation History" \
+    "+synergysports/Deleted Items" \
+    "+synergysports/Drafts" \
+    "+synergysports/INBOX" \
+    "+synergysports/Journal" \
+    "+synergysports/Junk Email" \
+    "+synergysports/Notes" \
+    "+synergysports/Outbox" \
+    "+synergysports/Sent Items" \
+    "+synergysports/Tasks"

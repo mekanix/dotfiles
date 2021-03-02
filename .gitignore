@@ -3,6 +3,5 @@ weechat/logs
 weechat/weechat.log
 weechat/irc.conf
 mutt/header_cache
-mutt/conf/mailboxes.muttrc
 *.password
 alacritty/alacritty.yml
