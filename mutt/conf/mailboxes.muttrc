@@ -15,6 +15,7 @@ mailboxes \
     "+tilda/Archive" \
     "+tilda/BSD" \
     "+tilda/BSD/Current" \
+    "+tilda/BSD/Doc" \
     "+tilda/BSD/Multimedia" \
     "+tilda/BSD/Network" \
     "+tilda/BSD/Rc" \

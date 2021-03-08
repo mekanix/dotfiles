@@ -26,6 +26,6 @@ syncthing &
 offlineimap &
 quiterss &
 (sleep 2 && xsetroot) &
-dino &
+gajim &
 
 exec i3
