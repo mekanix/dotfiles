@@ -128,7 +128,7 @@ assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
 assign [instance="weechat"] 4
 assign [class="Pidgin"] 4
-assign [class="Dino"] 4
+assign [class="Gajim"] 4
 
 workspace 1 output LVDS1
 workspace 2 output LVDS1

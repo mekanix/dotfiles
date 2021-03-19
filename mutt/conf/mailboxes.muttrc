@@ -1,9 +1,9 @@
 mailboxes \
+    "+pyser/INBOX" \
     "+pyser/Bank" \
     "+pyser/Deleted Items" \
     "+pyser/Drafts" \
     "+pyser/Eventbrite" \
-    "+pyser/INBOX" \
     "+pyser/Junk E-mail" \
     "+pyser/Queue" \
     "+pyser/Sent" \
@@ -11,6 +11,7 @@ mailboxes \
     "+pyser/Trash" \
     "+pyser/python" \
     \
+    "+tilda/INBOX" \
     "+tilda/Ansible" \
     "+tilda/Archive" \
     "+tilda/BSD" \
@@ -33,7 +34,6 @@ mailboxes \
     "+tilda/Eventbrite" \
     "+tilda/FOSDEM" \
     "+tilda/Hack" \
-    "+tilda/INBOX" \
     "+tilda/Junk E-mail" \
     "+tilda/NGI" \
     "+tilda/PySer" \
@@ -56,4 +56,12 @@ mailboxes \
     "+synergysports/Notes" \
     "+synergysports/Outbox" \
     "+synergysports/Sent Items" \
-    "+synergysports/Tasks"
+    "+synergysports/Tasks" \
+    \
+    "+goran/INBOX" \
+    "+goran/Deleted Items" \
+    "+goran/Drafts" \
+    "+goran/Junk E-mail" \
+    "+goran/Sent" \
+    \
+
