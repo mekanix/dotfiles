@@ -3,7 +3,9 @@
 set -e
 
 CONFIG=$(readlink -f $(dirname $0)/..)
-PROGRAM="nvim/UltiSnips"
-cd ~/.config
-rm -rf $PROGRAM
-ln -s $CONFIG $PROGRAM
+PROGRAM=".vim/UltiSnips"
+if [ ! -e ~/.vim ]; then
+  mkdir ~/.vim
+fi
+cd ~/.vim
+ln -s $CONFIG
