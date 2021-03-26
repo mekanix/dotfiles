@@ -17,4 +17,5 @@ endfunction
 function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
+  let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.SpaceVim.d/UltiSnips'
 endfunction
