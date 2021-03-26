@@ -25,7 +25,7 @@
   enable_statusline_mode = false
   filemanager = "nerdtree"
   snippet_engine = "ultisnips"
-  snippets_directory = '~/.SpaceVim.d/snippets'
+  bootstrap_after = "myconfig#after"
 
 [[layers]]
   name = 'autocomplete'
