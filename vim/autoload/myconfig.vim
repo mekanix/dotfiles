@@ -18,4 +18,9 @@ function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
   let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.SpaceVim.d/UltiSnips'
+
+  augroup fmt
+    autocmd!
+    autocmd BuffWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+  augroup END
 endfunction
