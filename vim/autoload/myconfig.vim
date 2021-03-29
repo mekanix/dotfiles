@@ -17,14 +17,10 @@ endfunction
 function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
-  set tabstop=2
-  set expandtab
+
   let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.SpaceVim.d/UltiSnips'
   set foldmethod=indent
   set foldlevel=99
-
-  augroup fmt
-    autocmd!
-    autocmd BuffWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-  augroup END
+  set tabstop=2
+  set expandtab
 endfunction
