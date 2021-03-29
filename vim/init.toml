@@ -58,9 +58,13 @@
 
 [[layers]]
   name = 'lang#python'
+  format_on_save = true
 
 [[layers]]
   name = 'lang#sh'
 
 [[layers]]
   name = 'tmux'
+
+[[layers]]
+  name = "foldsearch"
