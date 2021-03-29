@@ -17,6 +17,8 @@ endfunction
 function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
+  set tabstop=2
+  set expandtab
   let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.SpaceVim.d/UltiSnips'
 
   augroup fmt
