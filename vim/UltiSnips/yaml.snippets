@@ -5,10 +5,35 @@ snippet package "Install system packages"
     name: "{{ item.name }}"
 endsnippet
 
-
 snippet service "System service"
 - name: ${1:restart} $2
   service:
     name: $2
     state: $1ed
+endsnippet
+
+snippet group "Create System group"
+- name: create $1 group
+	group:
+		name: $1
+		state: present
+endsnippet
+
+snippet user "Create user"
+- name: create $1 user
+	user:
+		name: $1
+		shell: "${2:/bin/sh}"
+		group: "$3"
+		append: yes
+endsnippet
+
+snippet template "Setup template"
+- name: setup $1 template
+	template:
+		src: "$2"
+		dest: "$3"
+		owner: "$4" 
+		group: "$5"
+		mode: $6
 endsnippet
