@@ -65,3 +65,6 @@
 
 [[layers]]
   name = 'tmux'
+
+[[layers]]
+  name = "foldsearch"

@@ -20,6 +20,8 @@ function! myconfig#after() abort
   set tabstop=2
   set expandtab
   let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.SpaceVim.d/UltiSnips'
+  set foldmethod=indent
+  set foldlevel=99
 
   augroup fmt
     autocmd!
