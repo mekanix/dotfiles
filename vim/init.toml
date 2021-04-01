@@ -26,6 +26,7 @@
   filemanager = "nerdtree"
   snippet_engine = "ultisnips"
   bootstrap_after = "myconfig#after"
+  project_rooter_outermost = false
 
 [[layers]]
   name = 'autocomplete'
