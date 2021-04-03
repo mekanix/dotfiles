@@ -18,6 +18,7 @@ function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
 
+  set clipboard=unnamedplus
   set colorcolumn=80
   set foldmethod=indent
   set foldlevel=99
