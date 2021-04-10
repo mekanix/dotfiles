@@ -11,27 +11,27 @@
   # set spacevim theme. by default colorscheme layer is not loaded,
   # if you want to use more colorscheme, please load the colorscheme
   # layer
-  colorscheme = "one"
-  colorscheme_bg = "dark"
+  colorscheme = 'one'
+  colorscheme_bg = 'dark'
   # Disable guicolors in basic mode, many terminal do not support 24bit
   # true colors
   enable_guicolors = true
   # Disable statusline separator, if you want to use other value, please
   # install nerd fonts
-  statusline_separator = "arrow"
-  statusline_iseparator = "arrow"
+  statusline_separator = 'arrow'
+  statusline_iseparator = 'arrow'
   buffer_index_type = 4
   enable_tabline_filetype_icon = true
   enable_statusline_mode = false
-  filemanager = "nerdtree"
-  snippet_engine = "ultisnips"
-  bootstrap_after = "myconfig#after"
+  filemanager = 'nerdtree'
+  snippet_engine = 'ultisnips'
+  bootstrap_after = 'myconfig#after'
   project_rooter_outermost = false
 
 [[layers]]
   name = 'autocomplete'
-  auto_completion_return_key_behavior = "complete"
-  auto_completion_tab_key_behavior = "smart"
+  auto_completion_return_key_behavior = 'complete'
+  auto_completion_tab_key_behavior = 'smart'
 
 [[layers]]
   name = 'shell'
@@ -39,7 +39,7 @@
   default_height = 30
 
 [[layers]]
-  name = "colorscheme"
+  name = 'colorscheme'
 
 [[layers]]
   name = 'core'
@@ -53,6 +53,7 @@
 
 [[layers]]
   name = 'lang#javascript'
+  format_on_save = true
 
 [[layers]]
   name = 'lang#markdown'
@@ -68,4 +69,4 @@
   name = 'tmux'
 
 [[layers]]
-  name = "foldsearch"
+  name = 'foldsearch'
