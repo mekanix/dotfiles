@@ -1,18 +1,15 @@
 function! MyQuit(shouldwrite)
-  execute ':let buffernumstr = len(filter(range(1, bufnr("$")), "buflisted(v:val)"))'
-  execute ':let buffernum = str2nr(buffernumstr)'
   if a:shouldwrite == 'write'
     if &modifiable == '1'
       execute ':w'
     endif
   endif
-  if buffernum < 2
+  call SpaceVim#mapping#close_current_buffer()
+  execute ':let buffernum = str2nr(len(filter(range(1, bufnr("$")), "buflisted(v:val)")))'
+  if buffernum == 0
     execute ':q'
-  else
-    call SpaceVim#mapping#close_current_buffer()
   endif
 endfunction
-
 
 function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
