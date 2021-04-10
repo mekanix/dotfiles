@@ -70,3 +70,12 @@
 
 [[layers]]
   name = 'foldsearch'
+
+[[layers]]
+  name = 'lsp'
+  filetypes = [
+    'c',
+    'cpp',
+    'javascript',
+    'python',
+  ]

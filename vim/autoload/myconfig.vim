@@ -14,6 +14,12 @@ endfunction
 function! myconfig#after() abort
   nnoremap ZQ :call MyQuit("nowrite")<CR>
   nnoremap ZZ :call MyQuit("write")<CR>
+  let g:neoformat_python_black = {
+      \ 'exe': 'black',
+      \ 'stdin': 1,
+      \ 'args': ['-q', '-'],
+      \ }
+  let g:neoformat_enabled_python = ['black']
 
   set clipboard=unnamedplus
   set colorcolumn=80
