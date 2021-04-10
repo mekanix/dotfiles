@@ -23,8 +23,13 @@ function! myconfig#after() abort
 
   set clipboard=unnamedplus
   set colorcolumn=80
-  set foldmethod=indent
+  set foldmethod=syntax
   set foldlevel=99
   set tabstop=2
   set expandtab
+
+  augroup Fold
+    autocmd!
+    autocmd FileType python setlocal foldmethod=indent
+  augroup END
 endfunction
