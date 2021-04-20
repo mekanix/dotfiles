@@ -21,12 +21,11 @@ function! myconfig#after() abort
       \ }
   let g:neoformat_enabled_python = ['black']
 
-  set clipboard=unnamedplus
+  set clipboard+=unnamed
+  set clipboard+=unnamedplus
   set colorcolumn=80
   set foldmethod=syntax
   set foldlevel=99
-  set tabstop=2
-  set expandtab
 
   augroup Fold
     autocmd!
