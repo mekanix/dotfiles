@@ -27,8 +27,8 @@ function! myconfig#after() abort
   set foldmethod=syntax
   set foldlevel=99
 
-  augroup Fold
-    autocmd!
+  augroup Mine
     autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType make setlocal tabstop=8
   augroup END
 endfunction

@@ -77,6 +77,4 @@
   filetypes = [
     'c',
     'cpp',
-    'javascript',
-    'python',
   ]

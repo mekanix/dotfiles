@@ -113,7 +113,7 @@ class ${1/\w+\s*/\u$0/}Store {
     }
   }
 
-  remove = async (id) => {
+  destroy = async (id) => {
     try {
       const response = await window.rest.delete(\`/$1s/${id}\`)
       const result = { ...response.data, ok: true }
