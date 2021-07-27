@@ -27,5 +27,4 @@ hdr_order From: Date: To: Cc: Subject:
 
 folder-hook ~/Mail/tilda/* source ~/.mutt/conf/tilda.muttrc
 folder-hook ~/Mail/pyser/* source ~/.mutt/conf/pyser.muttrc
-folder-hook ~/Mail/synergysports/* source ~/.mutt/conf/synergysports.muttrc
 set header_cache="$HOME/.mutt/header_cache"

@@ -43,21 +43,6 @@ mailboxes \
     "+tilda/Trash" \
     "+tilda/python" \
     \
-    "+synergysports/INBOX" \
-    "+synergysports/Archive" \
-    "+synergysports/Calendar" \
-    "+synergysports/Contacts" \
-    "+synergysports/Conversation History" \
-    "+synergysports/Deleted Items" \
-    "+synergysports/Drafts" \
-    "+synergysports/INBOX" \
-    "+synergysports/Journal" \
-    "+synergysports/Junk Email" \
-    "+synergysports/Notes" \
-    "+synergysports/Outbox" \
-    "+synergysports/Sent Items" \
-    "+synergysports/Tasks" \
-    \
     "+goran/INBOX" \
     "+goran/Deleted Items" \
     "+goran/Drafts" \

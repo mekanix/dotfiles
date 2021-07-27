@@ -54,14 +54,14 @@
 
 [[layers]]
   name = 'lang#javascript'
-  format_on_save = true
+  # format_on_save = true
 
 [[layers]]
   name = 'lang#markdown'
 
 [[layers]]
   name = 'lang#python'
-  # format_on_save = true
+  format_on_save = true
 
 [[layers]]
   name = 'lang#sh'
@@ -77,4 +77,5 @@
   filetypes = [
     'c',
     'cpp',
+    'python',
   ]
