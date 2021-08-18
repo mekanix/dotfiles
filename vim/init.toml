@@ -54,7 +54,11 @@
 
 [[layers]]
   name = 'lang#javascript'
-  # format_on_save = true
+  format_on_save = true
+
+[[layers]]
+  name = 'lang#typescript'
+  format_on_save = true
 
 [[layers]]
   name = 'lang#markdown'
@@ -78,4 +82,6 @@
     'c',
     'cpp',
     'python',
+    'javascript',
+    'typescript',
   ]

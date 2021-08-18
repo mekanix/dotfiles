@@ -1,4 +1,4 @@
-ao=oss
+ao=oss,alsa
 audio-channels=stereo
 alang=eng
 slang=eng
