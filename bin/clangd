@@ -1,3 +1,14 @@
 #!/bin/sh
 
-/usr/local/bin/clangd12 $@
+VERSION=12
+BINARY=""
+
+if [ -x /usr/local/bin/clangd${VERSION} ]; then
+  BINARY="/usr/local/bin/clangd${VERSION}"
+elif [ -x /usr/bin/clangd ]; then
+  BINARY="/usr/bin/clangd"
+else
+  echo "No clangd found" 2>&1
+  exit 1
+fi
+${BINARY} $@

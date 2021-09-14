@@ -8,7 +8,7 @@ eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
 # Start audio before the apps
-mixer pcm 100 vol 100
+# mixer pcm 100 vol 100
 
 # Keyboard setup
 xset r rate 180 30
@@ -17,15 +17,17 @@ xrdb ~/.Xdefaults
 xmodmap ~/.xmodmap
 
 # Apps
+dunst &
+~/.screenlayout/office.sh
 alacritty --class weechat -e ~/bin/weechat.sh &
 keepassxc &
 unclutter &
 xautolock -time 10 -locker ~/bin/slock.sh &
 syncthing &
 ~/bin/mail.sh &
-offlineimap &
 quiterss &
 (sleep 2 && xsetroot) &
+slack &
 gajim &
 
 exec i3
