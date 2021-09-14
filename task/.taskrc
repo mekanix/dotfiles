@@ -6,11 +6,11 @@ calendar.holidays=full
 calendar.details=full
 color=on
 journal.time=on
-taskd.server=freecinc.com:53589
-taskd.key=\/home\/meka\/.task\/freecinc_265f3bba.key.pem
-taskd.certificate=\/home\/meka\/.task\/freecinc_265f3bba.cert.pem
-taskd.ca=\/home\/meka\/.task\/freecinc_265f3bba.ca.pem
-taskd.credentials=FreeCinc\/freecinc_265f3bba\/a2b3e64f-cc6b-4ce9-8d58-76e2ab9816d6
+taskd.server=tasks.tilda.center:5358
+taskd.key=\/usr\/home\/meka\/.task\/meka.key.pem
+taskd.certificate=\/usr\/home\/meka\/.task\/meka.cert.pem
+taskd.ca=\/usr\/home\/meka\/.task\/ca.cert.pem
+taskd.credentials=tilda\/Goran Mekic\/f4d9dcc2-10c4-11ec-b07d-bcaec5e131d0
 default.project=home
 default.command=list
 
