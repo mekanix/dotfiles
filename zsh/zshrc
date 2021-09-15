@@ -13,9 +13,18 @@ compinit
 #
 setopt share_history
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/scripts/git-prompt.zsh
+OS=`uname`
+if [ "${OS}" = "Linux" ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/share/zsh/scripts/git-prompt.zsh
+  alias l='ls -alh --color=auto'
+elif [ "${OS}" = "FreeBSD" ]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/local/share/git-prompt.zsh/git-prompt.zsh
+  alias l='ls -alhG'
+fi
 
 ZSH_GIT_PROMPT_FORCE_BLANK=1
 ZSH_GIT_PROMPT_SHOW_UPSTREAM="full"
@@ -40,5 +49,4 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 PROMPT=$'%F{blue}┏╸%f%(?..%F{red}%?%f · )%B%~%b$(gitprompt)\n%F{blue}┗╸%f%F{cyan}%n%f@%F{yellow}%m%f %F{blue}❯%f%F{cyan}❯%f%F{green}❯%f '
 RPROMPT=''
 
-alias l='ls -alhG'
 alias mutt='neomutt'
