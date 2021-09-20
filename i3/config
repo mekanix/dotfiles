@@ -125,7 +125,7 @@ bindsym $mod+s exec rofi -show ssh -font "snap 10"
 bindsym $mod+d exec rofi -show run -font "snap 10"
 
 assign [class="Chromium-browser"] 2
-assign [class="firefox"] 2
+assign [class="Firefox"] 2
 assign [instance="weechat"] 4
 assign [class="Pidgin"] 4
 assign [class="Gajim"] 4
