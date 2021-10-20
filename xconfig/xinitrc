@@ -3,6 +3,7 @@
 export BROWSER=~/bin/browser.sh
 export EDITOR=~/bin/editor.sh
 export PATH="${HOME}/bin:${PATH}"
+export USE_ALACRITTY="YES"
 
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)

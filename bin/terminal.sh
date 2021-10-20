@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "${USE_ALACRITTY}" = "yes" ]; then
+if [ "${USE_ALACRITTY}" = "YES" ]; then
   exec alacritty $@
 else
   exec uxterm $@
