@@ -3,10 +3,6 @@
     name = Goran Mekić
 [color]
     ui = auto
-[github]
-    user = mekanix
-[alias]
-    wdiff = diff --word-diff=color
 [fetch]
     prune = true
 [pull]

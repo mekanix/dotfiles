@@ -19,6 +19,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = "80"
 vim.g.UltiSnipsExpandTrigger = "<c-e>"
 vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
