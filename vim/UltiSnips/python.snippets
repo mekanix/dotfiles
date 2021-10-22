@@ -1,13 +1,17 @@
 snippet freenit "Five basic methods"
+from typing import List
+
 import ormar
-from ..route import route
-from ..models.$1 import ${1/\w+\s*/\u$0/}
+from fastapi import HTTPException
+
+from ..models.$1 import ${1/\w+\s*/\u$0/}, ${1/\w+\s*/\u$0/}Optional
+from .router import route
 
 
 @route('/$1s', tags=['$1'])
 class ${1/\w+\s*/\u$0/}ListAPI():
     @staticmethod
-    async def get() -> ormar.List[ormar.Optional[${1/\w+\s*/\u$0/}]]:
+    async def get() -> List[${1/\w+\s*/\u$0/}]:
         return await ${1/\w+\s*/\u$0/}.objects.all()
 
     @staticmethod
@@ -20,19 +24,27 @@ class ${1/\w+\s*/\u$0/}ListAPI():
 class ${1/\w+\s*/\u$0/}DetailAPI():
     @staticmethod
     async def get(id: int) -> ${1/\w+\s*/\u$0/}:
-        $1 = await ${1/\w+\s*/\u$0/}.objects.get(pk=id)
+        try:
+            $1 = await ${1/\w+\s*/\u$0/}.objects.get(pk=id)
+        except ormar.exceptions.NoMatch:
+            raise HTTPException(status_code=404, detail="No such $1")
         return $1
 
     @staticmethod
-    async def patch(id: int, $1_data: ${1/\w+\s*/\u$0/}) -> ${1/\w+\s*/\u$0/}:
-        $1 = await ${1/\w+\s*/\u$0/}.objects.get(pk=id)
-        $1.update($1_data)
-        await $1.save()
+    async def patch(id: int, $1_data: ${1/\w+\s*/\u$0/}Optional) -> ${1/\w+\s*/\u$0/}:
+        try:
+            $1 = await ${1/\w+\s*/\u$0/}.objects.get(pk=id)
+            await $1.patch($1_data)
+        except ormar.exceptions.NoMatch:
+            raise HTTPException(status_code=404, detail="No such $1")
         return $1
 
     @staticmethod
     async def delete(id: str) -> ${1/\w+\s*/\u$0/}:
-        $1 = ${1/\w+\s*/\u$0/}.get(id=id)
+        try:
+            $1 = await ${1/\w+\s*/\u$0/}.objects.get(pk=id)
+        except ormar.exceptions.NoMatch:
+            raise HTTPException(status_code=404, detail="No such $1")
         await $1.delete()
         return $1
 endsnippet
@@ -40,18 +52,24 @@ endsnippet
 
 snippet model "Basic DB model"
 import ormar
+
 from ..config import getConfig
+from ..models.base import BaseModel
+from ..models.metaclass import AllOptional
 
 config = getConfig()
 
 
-class $1(ormar.Model):
+class $1(BaseModel):
     class Meta(config.meta):
         pass
 
     id: int = ormar.Integer(primary_key=True)
-
     $0
+
+
+class $1Optional($1, metaclass=AllOptional):
+    pass
 endsnippet
 
 
