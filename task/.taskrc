@@ -38,3 +38,4 @@ default.due=today
 
 report.list.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description.count,urgency
 report.long.sort=start-,due+,project+/,urgency-
+news.version=2.6.0

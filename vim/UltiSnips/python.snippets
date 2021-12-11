@@ -4,7 +4,7 @@ from typing import List
 import ormar
 from fastapi import HTTPException
 
-from freenit.router import route
+from freenit.api.router import route
 
 from ..models.$1 import ${1/\w+\s*/\u$0/}, ${1/\w+\s*/\u$0/}Optional
 
@@ -21,7 +21,7 @@ class ${1/\w+\s*/\u$0/}ListAPI():
         return $1
 
 
-@route('/$1s/{id}', tags=['$1'])
+@route('/$1s/{id}', tags=['$1'], many=True)
 class ${1/\w+\s*/\u$0/}DetailAPI():
     @staticmethod
     async def get(id: int) -> ${1/\w+\s*/\u$0/}:
@@ -55,9 +55,8 @@ snippet model "Basic DB model"
 import ormar
 
 from freenit.config import getConfig
-
-from ..models.base import BaseModel
-from ..models.metaclass import AllOptional
+from freenit.models.base import BaseModel
+from freenit.models.metaclass import AllOptional
 
 config = getConfig()
 
