@@ -1,4 +1,4 @@
 #!/bin/sh
 
-xset dpms force off
+xset dpms force off &
 slock
