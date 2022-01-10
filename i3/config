@@ -25,7 +25,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec alacritty
-bindsym $mod+Return exec /home/meka/bin/terminal.sh
+# bindsym $mod+Return exec /home/meka/bin/terminal.sh
+bindsym $mod+Return exec uxterm
 
 # kill focused window
 bindsym $mod+c kill
@@ -124,6 +125,8 @@ bindsym $mod+b exec ~/bin/browser.sh
 bindsym $mod+a exec rofi -show window -font "snap 10"
 bindsym $mod+s exec rofi -show ssh -font "snap 10"
 bindsym $mod+d exec rofi -show run -font "snap 10"
+
+bindsym Control+grave exec dunstctl history-pop
 
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2

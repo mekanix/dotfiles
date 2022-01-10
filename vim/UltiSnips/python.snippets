@@ -9,7 +9,7 @@ from freenit.api.router import route
 from ..models.$1 import ${1/\w+\s*/\u$0/}, ${1/\w+\s*/\u$0/}Optional
 
 
-@route('/$1s', tags=['$1'])
+@route('/$1s', tags=['$1'], many=True)
 class ${1/\w+\s*/\u$0/}ListAPI():
     @staticmethod
     async def get() -> List[${1/\w+\s*/\u$0/}]:
