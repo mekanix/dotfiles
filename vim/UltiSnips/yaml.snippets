@@ -3,6 +3,7 @@ snippet package "Install system packages"
   with_items: "{{ $1_packages }}"
   package:
     name: "{{ item.name }}"
+    state: latest
 endsnippet
 
 

@@ -1,0 +1,85 @@
+snippet store "Create basic store"
+import { writable } from 'svelte/store';
+import type { ${1/\w+\s*/\u$0/}, ${1/\w+\s*/\u$0/}Optional } from '$lib/types.d';
+import { headers, prefix } from './common';
+
+export function create${1/\w+\s*/\u$0/}s() {
+  const { subscribe, set, update } = writable([]);
+  return {
+    subscribe,
+    reset: () => set([]),
+
+    get: async () => {
+      const response = await fetch(\`${prefix}/$1s\`);
+      const json = await response.json();
+      if (response.ok) {
+        set(json);
+      } else {
+        set([]);
+        throw new Error('Error fetching $1 list');
+      }
+    },
+
+    post: async (data: ${1/\w+\s*/\u$0/}) => {
+      const options = { headers, method: 'POST', body: JSON.stringify(data) };
+      const response = await fetch(\`${prefix}/$1s\`, options);
+      const json = await response.json();
+      if (response.ok) {
+        update((data) => [...data, json]);
+      } else if (json.detail) {
+        throw new Error(\`Error sending data: ${json.detail}\`);
+      } else {
+        throw new Error('Error sending data');
+      }
+    },
+  };
+}
+
+export function create${1/\w+\s*/\u$0/}() {
+  const { subscribe, set } = writable({});
+  return {
+    subscribe,
+    reset: () => set({}),
+
+    get: async (id: string) => {
+      const response = await fetch(\`${prefix}/$1s/${id}\`);
+      const json = await response.json();
+      if (response.ok) {
+        set(json);
+      } else if (json.detail) {
+        set({});
+        throw new Error(\`Error fetching $1 with id ${id}: ${json.detail}\`);
+      } else {
+        set({});
+        throw new Error(\`Error fetching $1 with id ${id}\`);
+      }
+    },
+
+    patch: async (id: string, data: ${1/\w+\s*/\u$0/}Optional) => {
+      const options = { headers, method: 'PATCH', body: JSON.stringify(data) };
+      const response = await fetch(\`${prefix}/$1s/${id}\`, options);
+      const json = await response.json();
+      if (response.ok) {
+        set(json);
+      } else if (json.detail) {
+        throw new Error(\`Error updating $1: ${json.detail}\`);
+      } else {
+        throw new Error('Error updating $1');
+      }
+    },
+
+    delete: async (id: string) => {
+      const options = { headers, method: 'DELETE' };
+      const response = await fetch(\`${prefix}/$1s/${id}\`, options);
+      const json = await response.json();
+      if (!response.ok) {
+        if (json.detail) {
+          throw new Error(\`Error deleting $1: ${json.detail}\`);
+        } else {
+          throw new Error('Error deleting $1');
+        }
+      }
+    },
+  };
+}
+endsnippet
