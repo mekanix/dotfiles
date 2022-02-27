@@ -35,6 +35,7 @@ mailboxes \
     "+tilda/FOSDEM" \
     "+tilda/Hack" \
     "+tilda/Junk E-mail" \
+    "+tilda/Linux Audio/Users" \
     "+tilda/NGI" \
     "+tilda/PySer" \
     "+tilda/Queue" \

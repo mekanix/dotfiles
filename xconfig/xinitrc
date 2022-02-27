@@ -28,7 +28,6 @@ syncthing &
 ~/bin/mail.sh &
 quiterss &
 (sleep 2 && xsetroot) &
-slack &
-gajim &
+dino &
 
 exec i3
