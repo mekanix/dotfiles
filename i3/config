@@ -24,9 +24,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec alacritty
-# bindsym $mod+Return exec /home/meka/bin/terminal.sh
-bindsym $mod+Return exec uxterm
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec uxterm
 
 # kill focused window
 bindsym $mod+c kill
@@ -130,6 +129,7 @@ bindsym Control+grave exec dunstctl history-pop
 
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
+assign [class="firefox"] 2
 assign [instance="weechat"] 4
 assign [class="Pidgin"] 4
 assign [class="Gajim"] 4
