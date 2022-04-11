@@ -44,6 +44,7 @@ endsnippet
 
 
 snippet store "Freenit based store class"
+import axios from 'axios'
 import { makeAutoObservable, runInAction } from 'mobx'
 
 class ${1/\w+\s*/\u$0/}Store {
@@ -60,9 +61,9 @@ class ${1/\w+\s*/\u$0/}Store {
     makeAutoObservable(this)
   }
 
-  fetch = auth.protect(async (id) => {
+  fetch = async (id) => {
     try {
-      const response = await window.rest.get(\`/$1s/${id}\`)
+      const response = await axios.get(\`/$1s/${id}\`)
       runInAction(() => {
         this.detail = { ...response.data, ok: true }
       })
@@ -70,11 +71,11 @@ class ${1/\w+\s*/\u$0/}Store {
     } catch (error) {
       return { ...error, ok: false }
     }
-  })
+  }
 
-  fetchAll = auth.protect(async (Page = 0, PerPage = 10) => {
+  fetchAll = async (Page = 0, PerPage = 10) => {
     try {
-      const response = await window.rest.get('/$1s', { 
+      const response = await axios.get('/$1s', { 
         headers: { Page, PerPage } 
       })
       runInAction(() => {
@@ -84,11 +85,11 @@ class ${1/\w+\s*/\u$0/}Store {
     } catch (error) {
       return { ...error, ok: false }
     }
-  })
+  }
 
   create = async (data) => {
     try {
-      const response = await window.rest.post('/$1s', data)
+      const response = await axios.post('/$1s', data)
       runInAction(() => {
         this.list = { ...response.data, ok: true }
       })
@@ -100,7 +101,7 @@ class ${1/\w+\s*/\u$0/}Store {
 
   edit = async (id, data) => {
     try {
-      const response = await window.rest.patch(\`/$1s/${id}\`, data)
+      const response = await axios.patch(\`/$1s/${id}\`, data)
       const result = { ...response.data, ok: true }
       if (this.detail.id === id) {
         runInAction(() => {
@@ -115,7 +116,7 @@ class ${1/\w+\s*/\u$0/}Store {
 
   destroy = async (id) => {
     try {
-      const response = await window.rest.delete(\`/$1s/${id}\`)
+      const response = await axios.delete(\`/$1s/${id}\`)
       const result = { ...response.data, ok: true }
       runInAction(() => {
         this.detail = result
@@ -128,8 +129,7 @@ class ${1/\w+\s*/\u$0/}Store {
   }
 }
 
-const $1 = new ${1/\w+\s*/\u$0/}Store()
-export default $1
+export default ${1/\w+\s*/\u$0/}Store
 endsnippet
 
 

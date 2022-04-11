@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=12
+VERSION=13
 BINARY=""
 
 if [ -x /usr/local/bin/clangd${VERSION} ]; then

@@ -126,13 +126,13 @@ bindsym $mod+s exec rofi -show ssh -font "snap 10"
 bindsym $mod+d exec rofi -show run -font "snap 10"
 
 bindsym Control+grave exec dunstctl history-pop
+bindsym Control+Shift+grave exec dunstctl close
 
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
 assign [class="firefox"] 2
 assign [instance="weechat"] 4
-assign [class="Pidgin"] 4
-assign [class="Gajim"] 4
+assign [class="Dino"] 4
 
 workspace 1 output HDMI-1
 workspace 2 output DP-1
