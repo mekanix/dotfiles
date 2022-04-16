@@ -13,9 +13,12 @@ eval $(ssh-agent)
 
 # Keyboard setup
 xset r rate 180 30
+xset dpms 600 600 600
 setxkbmap -option "grp:lswitch" "us,hr"
 xrdb ~/.Xdefaults
 xmodmap ~/.xmodmap
+xset +dpms
+xset dpms 600 600 600
 
 # Apps
 dunst &
