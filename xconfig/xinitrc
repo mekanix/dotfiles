@@ -17,8 +17,8 @@ xset dpms 600 600 600
 setxkbmap -option "grp:lswitch" "us,hr"
 xrdb ~/.Xdefaults
 xmodmap ~/.xmodmap
-xset +dpms
 xset dpms 600 600 600
+xset +dpms
 
 # Apps
 dunst &

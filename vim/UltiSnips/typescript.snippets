@@ -83,3 +83,41 @@ export function create${1/\w+\s*/\u$0/}() {
   };
 }
 endsnippet
+
+
+snippet sstore "Freenit store"
+import { writable } from 'svelte/store'
+
+class ${1/\w+\s*/\u$0/}Store {
+  subscribe: any
+  set: any
+  update: any
+
+  constructor(data: any) {
+    const { subscribe, set, update } = writable(data)
+    this.subscribe = subscribe
+    this.set = set
+    this.update = update
+  }
+
+  get = async (page = 1, perpage = 10) => {
+    const options: RequestInit = {
+      headers: {
+        Page: \`${page}\`,
+        Perpage: \`${perpage}\`,
+      },
+      method: 'GET',
+    }
+    try {
+      const response = await fetch('/api/v1/$1s', options)
+      const data = await response.json()
+      this.set(data)
+      return { ...data, ok: true }
+    } catch (error) {
+      return { error, ok: false }
+    }
+  }
+}
+
+export default ${1/\w+\s*/\u$0/}Store
+endsnippet
