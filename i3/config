@@ -142,5 +142,3 @@ workspace 5 output HDMI-1
 workspace 6 output DP-1
 workspace 7 output HDMI-1
 workspace 8 output HDMI-1
-
-exec alacritty

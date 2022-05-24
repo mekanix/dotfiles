@@ -22,11 +22,10 @@ xset +dpms
 
 # Apps
 dunst &
-~/.screenlayout/office.sh
 alacritty --class weechat -e ~/bin/weechat.sh &
 keepassxc &
 unclutter &
-xautolock -time 10 -locker ~/bin/slock.sh &
+xautolock -time 10 -locker slock &
 syncthing &
 ~/bin/mail.sh &
 quiterss &
