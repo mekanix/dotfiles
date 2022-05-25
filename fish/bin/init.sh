@@ -13,4 +13,5 @@ fisher install \
   mekanix/fish-path \
   mekanix/fish-fzf \
   mekanix/vibrant \
-  jorgebucaran/autopair.fish
+  jorgebucaran/autopair.fish \
+  acomagu/fish-async-prompt
