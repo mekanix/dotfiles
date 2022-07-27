@@ -3,24 +3,12 @@
 export BROWSER=~/bin/browser.sh
 export EDITOR=~/bin/editor.sh
 export PATH="${HOME}/bin:${PATH}"
-export USE_ALACRITTY="YES"
 
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
-# Start audio before the apps
-# mixer pcm 100 vol 100
-
-# Keyboard setup
-xset r rate 180 30
-xset dpms 600 600 600
-setxkbmap -option "grp:lswitch" "us,hr"
-xrdb ~/.Xdefaults
-xmodmap ~/.xmodmap
-xset dpms 600 600 600
-xset +dpms
-
 # Apps
+pulseaudio --daemonize
 dunst &
 alacritty --class weechat -e ~/bin/weechat.sh &
 keepassxc &
@@ -31,5 +19,16 @@ syncthing &
 quiterss &
 (sleep 2 && xsetroot) &
 dino &
+slack --startup &
+viber &
+
+# Keyboard setup
+xset r rate 180 30
+xset dpms 600 600 600
+setxkbmap -option "grp:lswitch" "us,hr"
+xrdb ~/.Xdefaults
+xmodmap ~/.xmodmap
+xset dpms 600 600 600
+xset +dpms
 
 exec i3

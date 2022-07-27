@@ -120,10 +120,9 @@ workspace_layout tabbed
 focus_follows_mouse no
 
 bindsym $mod+b exec ~/bin/browser.sh
+bindsym $mod+a exec "rtprio 20 audacious"
 
-bindsym $mod+a exec rofi -show window -font "snap 10"
-bindsym $mod+s exec rofi -show ssh -font "snap 10"
-bindsym $mod+d exec rofi -show run -font "snap 10"
+bindsym $mod+d exec dmenu_run -i
 
 bindsym Control+grave exec dunstctl history-pop
 bindsym Control+Shift+grave exec dunstctl close
