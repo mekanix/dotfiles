@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -f configure ]
+if [ ! -f configure ]; then
   ./autogen.sh
-end
+fi
 
 env \
   CC=cc \

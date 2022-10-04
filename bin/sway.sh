@@ -9,3 +9,4 @@ eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
 exec sway >~/.log/sway.log 2>&1
+exit 0

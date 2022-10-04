@@ -1,9 +1,11 @@
 #!/bin/sh
 
-sleep 10
+sleep 8
+alacritty --class weechat -e weechat &
 keepassxc &
 quiterss &
 syncthing &
-alacritty --class weechat -e ~/bin/weechat.sh &
 dino &
 ~/bin/mail.sh
+slack &
+viber &
