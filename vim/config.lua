@@ -216,3 +216,5 @@ vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.vim/UltiSnips'
 vim.g.UltiSnipsSnippetDirectories = { '~/.vim/UltiSnips' }
 
+vim.api.nvim_set_option("foldmethod", "indent")
+vim.api.nvim_set_option("foldlevel", 99)
