@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export BROWSER=~/bin/browser.sh
-export EDITOR=~/bin/editor.sh
+export EDITOR=lvim
 export PATH="${HOME}/bin:${PATH}"
 
 eval $(gpg-agent --daemon)
@@ -10,20 +10,22 @@ eval $(ssh-agent)
 # Apps
 pulseaudio --daemonize
 dunst &
-alacritty --class weechat -e ~/bin/weechat.sh &
+hexchat &
 keepassxc &
 unclutter &
 xautolock -time 10 -locker slock &
 syncthing &
-~/bin/mail.sh &
 quiterss &
 (sleep 2 && xsetroot) &
 dino &
 slack --startup &
 viber &
-claws-mail &
+~/bin/mail.sh &
+offlineimap &
+birdtray &
 
 # Keyboard setup
 xrdb ~/.Xdefaults
+xmodmap ~/.xmodmap
 
 exec i3

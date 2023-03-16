@@ -76,6 +76,12 @@ bindsym $mod+Shift+w move container to workspace 6
 bindsym $mod+Shift+e move container to workspace 7
 bindsym $mod+Shift+r move container to workspace 8
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # reload the configuration file
 bindsym Control+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -130,7 +136,7 @@ assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
 assign [class="firefox"] 2
 assign [instance="weechat"] 4
-assign [class="Dino"] 4
+assign [class="dino"] 4
 
 workspace 1 output HDMI-1
 workspace 2 output HDMI-1

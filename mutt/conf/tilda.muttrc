@@ -3,7 +3,7 @@ source ~/.mutt/conf/tilda.password
 set from = "meka@tilda.center"
 set realname = "Goran Mekić"
 set imap_user = "meka@tilda.center"
-set smtp_url = smtp://$imap_user:$imap_pass@mail.tilda.center:587
+set smtp_url = "smtp://$imap_user:$imap_pass@mail.tilda.center:587"
 set spoolfile = "+tilda/INBOX"
 set record = "+tilda/Sent"
 set postponed = "+tilda/Drafts"

@@ -3,6 +3,7 @@ source ~/.mutt/conf/sidebar.muttrc
 source ~/.mutt/conf/gpg.muttrc
 source ~/.mutt/conf/mailboxes.muttrc
 source ~/.mutt/conf/headers.muttrc
+source ~/.mutt/conf/pyser.muttrc
 source ~/.mutt/conf/tilda.muttrc
 source ~/.mutt/conf/macros.muttrc
 source ~/.mutt/conf/khard.muttrc
