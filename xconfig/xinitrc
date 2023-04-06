@@ -14,7 +14,6 @@ hexchat &
 keepassxc &
 unclutter &
 xautolock -time 10 -locker slock &
-syncthing &
 quiterss &
 (sleep 2 && xsetroot) &
 dino &
@@ -26,6 +25,6 @@ birdtray &
 
 # Keyboard setup
 xrdb ~/.Xdefaults
-xmodmap ~/.xmodmap
+# xmodmap ~/.xmodmap
 
 exec i3
