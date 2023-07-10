@@ -1,7 +1,6 @@
 #!/bin/sh
 
 export BROWSER=~/bin/browser.sh
-export EDITOR=lvim
 export PATH="${HOME}/bin:${PATH}"
 
 eval $(gpg-agent --daemon)
@@ -19,9 +18,8 @@ quiterss &
 dino &
 slack --startup &
 viber &
-~/bin/mail.sh &
-offlineimap &
 birdtray &
+syncthing &
 
 # Keyboard setup
 xrdb ~/.Xdefaults
