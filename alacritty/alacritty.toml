@@ -6,7 +6,7 @@ style = "Beam"
 unfocused_hollow = true
 
 [font]
-size = 24
+size = 14
 
 [font.glyph_offset]
 x = 0
