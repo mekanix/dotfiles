@@ -1,5 +1,6 @@
-ao=oss,alsa
+ao=oss
 audio-channels=stereo
 alang=eng
 slang=eng
 fs
+volume=70

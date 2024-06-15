@@ -2,27 +2,30 @@
 
 export BROWSER=~/bin/browser.sh
 export PATH="${HOME}/bin:${PATH}"
+#export GTK_THEME=Dexy-GTK
 
 eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
 # Apps
+#mixer -f /dev/mixer5 vol=100 pcm=100 rec=100
+synergyc hal9000
 pulseaudio --daemonize
 dunst &
 hexchat &
 keepassxc &
 unclutter &
 xautolock -time 10 -locker slock &
-quiterss &
 (sleep 2 && xsetroot) &
-dino &
+gajim &
 slack --startup &
 viber &
 birdtray &
 syncthing &
+(sleep 2 && wpa_gui -t) &
 
 # Keyboard setup
 xrdb ~/.Xdefaults
-# xmodmap ~/.xmodmap
+(sleep 2 && xmodmap ~/.xmodmap) &
 
 exec i3
