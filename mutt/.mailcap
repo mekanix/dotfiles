@@ -1,6 +1,0 @@
-xxxtext/xxxplain;               lynx %s; nametemplate=%s.htm
-xxxtext/xxxplain;               lynx -dump %s; nametemplate=%s.htm; copiousoutput
-text/html;                      lynx %s; nametemplate=%s.html
-text/html;                      lynx -dump %s; nametemplate=%s.html; copiousoutput
-application/pdf;                atril %s
-image/*;                        geeqie %s

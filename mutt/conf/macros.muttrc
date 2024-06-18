@@ -1,2 +1,0 @@
-macro index,pager ,  "<next-unread-mailbox><enter><next-new-then-unread><enter>" "Go to new mail"
-bind index,pager \Cv next-unread-mailbox
