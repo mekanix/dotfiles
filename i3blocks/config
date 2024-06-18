@@ -21,6 +21,6 @@ command=temp.sh
 interval=10
 
 [time]
-command=date "+%Y-%m-%d %H:%M"
+command=date.sh
 interval=20
 color=#BBBBFF

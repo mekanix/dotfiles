@@ -9,7 +9,7 @@ eval $(ssh-agent)
 
 # Apps
 #mixer -f /dev/mixer5 vol=100 pcm=100 rec=100
-synergyc hal9000
+synergys
 pulseaudio --daemonize
 dunst &
 hexchat &
@@ -18,14 +18,13 @@ unclutter &
 xautolock -time 10 -locker slock &
 (sleep 2 && xsetroot) &
 gajim &
-slack --startup &
-viber &
+#slack --startup &
+#viber &
 birdtray &
-syncthing &
-(sleep 2 && wpa_gui -t) &
 
 # Keyboard setup
 xrdb ~/.Xdefaults
 (sleep 2 && xmodmap ~/.xmodmap) &
+setxkbmap us,hr -option "grp:lswitch"
 
 exec i3
