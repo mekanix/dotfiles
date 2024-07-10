@@ -1,7 +1,7 @@
 #!/bin/sh
 
-YELLOW=12
-RED=16
+RED=$(sysctl -n hw.ncpu)
+YELLOW=$(echo "${RED} - 4" | bc)
 LOAD=$(top -d 1 | grep '^last pid' | cut -f 3 -d ':' | cut -f 1 -d ',' | awk '{print $1}')
 WHOLELOAD=$(echo "${LOAD}" | cut -f 1 -d '.')
 

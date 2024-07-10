@@ -18,9 +18,10 @@ unclutter &
 xautolock -time 10 -locker slock &
 (sleep 2 && xsetroot) &
 gajim &
-#slack --startup &
-#viber &
+slack --startup &
+(viber & sleep 2 && wmctrl -c "Viber") &
 birdtray &
+liferea &
 
 # Keyboard setup
 xrdb ~/.Xdefaults

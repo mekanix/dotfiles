@@ -135,14 +135,3 @@ bindsym Control+Shift+grave exec dunstctl close
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
 assign [class="firefox"] 2
-assign [instance="weechat"] 4
-assign [class="dino"] 4
-
-workspace 1 output eDP-1 
-workspace 2 output HDMI-1
-workspace 3 output HDMI-1
-workspace 4 output eDP-1 
-workspace 5 output eDP-1 
-workspace 6 output eDP-1 
-workspace 7 output eDP-1 
-workspace 8 output eDP-1 
