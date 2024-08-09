@@ -2,7 +2,8 @@
 
 YELLOW=70
 RED=80
-TEMP=$(sysctl -n dev.cpu.0.temperature | sed 's/C//')
+RAW_TEMP=$(sysctl -n dev.cpu.0.temperature 2>/dev/null || sysctl -n hw.acpi.thermal.tz0.temperature 2>/dev/null)
+TEMP=$(echo ${RAW_TEMP} | sed 's/C//')
 WHOLETEMP=$(echo "${TEMP}" | cut -f 1 -d '.')
 
 echo "+${TEMP}°C"
