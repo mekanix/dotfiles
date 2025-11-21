@@ -83,11 +83,11 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # reload the configuration file
-bindsym Control+Shift+c reload
+bindsym $mod+Control+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Control+Shift+r restart
+#bindsym Control+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Control+Shift+e exec "i3-msg exit"
+bindsym $mod+Control+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
