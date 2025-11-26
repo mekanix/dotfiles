@@ -1,8 +1,4 @@
 i3status/config
-weechat/logs
-weechat/weechat.log
-weechat/irc.conf
-mutt/header_cache
-mutt/conf/mailboxes.muttrc
-*.password
 alacritty/alacritty.yml
+fish/conf.d/
+fish/functions/
