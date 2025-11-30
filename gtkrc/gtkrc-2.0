@@ -1,6 +1,6 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/home/meka/.themes/Dexy-GTK/gtk-2.0/gtkrc"
+include "/home/meka/.themes/Dexy-GTK/gtk-2.0/gtkrc"
 
-include "/usr/home/meka/.gtkrc.mine"
+include "/home/meka/.gtkrc.mine"
 
 # -- THEME AUTO-WRITTEN DO NOT EDIT

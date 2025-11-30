@@ -28,17 +28,19 @@ PACKAGES="\
   mpv \
   neovim \
   nmap \
-  podman \
+  podman-suite \
   pv \
   reggae \
   ripgrep \
   rofi \
   rust \
   slim \
+  slock \
   syncthing \
   thunderbird \
   unclutter \
   virtual_oss_bluetooth \
+  xautolock \
   xorg \
   xsel-conrad \
 "
@@ -57,6 +59,26 @@ echo 'podman_enable="YES"' >${RCD}/podman
 echo 'ubuntu_enable="YES"' >${RCD}/ubuntu
 echo 'pf_enable="YES"' >${RCD}/pf
 echo 'pflog_enable="YES"' >${RCD}/pflog
+
+cat <<EOF >/etc/sysctl.conf
+#
+#  This file is read when going to multi-user and its contents piped thru
+#  ``sysctl'' to adjust kernel values.  ``man 5 sysctl.conf'' for details.
+#
+
+# Uncomment this to prevent users from seeing information about processes that
+# are being run under another UID.
+#security.bsd.see_other_uids=0
+security.bsd.see_other_uids=0
+security.bsd.see_other_gids=0
+security.bsd.see_jail_proc=0
+security.bsd.unprivileged_read_msgbuf=0
+security.bsd.unprivileged_proc_debug=0
+kern.randompid=1
+vfs.zfs.vdev.min_auto_ashift=12
+
+EOF
+echo 'security.mac.do.rules=gid=0:any' >>/etc/sysctl.conf
 echo 'net.pf.filter_local=1' >>/etc/sysctl.conf
 echo 'kern.coredump=0' >>/etc/sysctl.conf
 
@@ -68,5 +90,5 @@ if [ "${HOSTNAME}" = "hal9000" ]; then
 fi
 
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
-echo "#!/bin/sh\n\nslack --no-sandbox --no-zygote" >/usr/local/bin/slack
+echo -e "#!/bin/sh\n\nslack --no-sandbox --no-zygote" >/usr/local/bin/slack
 chmod +x /usr/local/bin/slack
