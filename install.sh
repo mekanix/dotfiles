@@ -10,6 +10,7 @@ PACKAGES="\
   audacity \
   birdtray \
   ccache \
+  debootstrap \
   drm-kmod \
   dunst \
   fd-find \
@@ -28,6 +29,7 @@ PACKAGES="\
   neovim \
   nmap \
   podman \
+  pv \
   reggae \
   ripgrep \
   rofi \
@@ -52,6 +54,7 @@ echo 'slim_enable="YES"' >${RCD}/slim
 echo 'syncthing_enable="YES"' >${RCD}/syncthing
 echo 'syncthing_user="meka"' >>${RCD}/syncthing
 echo 'podman_enable="YES"' >${RCD}/podman
+echo 'ubuntu_enable="YES"' >${RCD}/ubuntu
 echo 'pf_enable="YES"' >${RCD}/pf
 echo 'pflog_enable="YES"' >${RCD}/pflog
 echo 'net.pf.filter_local=1' >>/etc/sysctl.conf
