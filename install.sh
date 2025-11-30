@@ -90,5 +90,5 @@ if [ "${HOSTNAME}" = "hal9000" ]; then
 fi
 
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
-echo -e "#!/bin/sh\n\nslack --no-sandbox --no-zygote" >/usr/local/bin/slack
+echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote" >/usr/local/bin/slack
 chmod +x /usr/local/bin/slack
