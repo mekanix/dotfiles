@@ -49,7 +49,7 @@ pw group mod realtime -m meka
 pw group mod video -m meka
 
 echo 'dbus_enable="YES"' >${RCD}/dbus
-echo 'kld_list="amdgpu mac_do mac_priority"' >${RCD}/kld
+echo 'kld_list="amdgpu amdtemp mac_do mac_priority"' >${RCD}/kld
 echo 'slim_enable="YES"' >${RCD}/slim
 echo 'syncthing_enable="YES"' >${RCD}/syncthing
 echo 'syncthing_user="meka"' >>${RCD}/syncthing
