@@ -66,3 +66,7 @@ if [ "${HOSTNAME}" = "hal9000" ]; then
   echo 'virtual_oss_enable="YES"' >${RCD}/virtual_oss
   echo 'virtual_oss_dsp="-S -i 8 -C 32 -c 32 -r 48000 -b 32 -s 4ms -f /dev/dsp4 -c 2 -d dsp -t dsp.ctl"' >>${RCD}/virtual_oss
 fi
+
+ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
+echo "#!/bin/sh\n\nslack --no-sandbox --no-zygote" >/usr/local/bin/slack
+chmod +x /usr/local/bin/slack

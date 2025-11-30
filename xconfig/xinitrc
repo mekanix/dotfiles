@@ -8,7 +8,6 @@ eval $(gpg-agent --daemon)
 eval $(ssh-agent)
 
 # Apps
-#mixer -f /dev/mixer5 vol=100 pcm=100 rec=100
 synergys
 pulseaudio --daemonize
 dunst &
