@@ -10,4 +10,4 @@ rm -rf $PROGRAM
 ln -s $CONFIG $PROGRAM
 cd $PROGRAM
 HOST=$(hostname -s)
-ln -s alacritty-${HOST}.yml alacritty.yml
+ln -s alacritty-${HOST}.toml alacritty.toml
