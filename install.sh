@@ -47,10 +47,10 @@ PACKAGES="\
 "
 
 cat <<EOF >/usr/local/etc/pkg/repos/FreeBSD.conf
-FreeBSD-ports: { url: "pkg+https://pkg.FreeBSD.org/${ABI}/latest" }
-FreeBSD-ports-kmods: { url: "pkg+https://pkg.FreeBSD.org/${ABI}/kmods_latest_${VERSION_MINOR}" }
+FreeBSD-ports: { url: "pkg+https://pkg.FreeBSD.org/\${ABI}/latest" }
+FreeBSD-ports-kmods: { url: "pkg+https://pkg.FreeBSD.org/\${ABI}/kmods_latest_\${VERSION_MINOR}" }
 FreeBSD-base: {
-  url: "pkg+https://pkg.FreeBSD.org/${ABI}/base_release_${VERSION_MINOR}",
+  url: "pkg+https://pkg.FreeBSD.org/\${ABI}/base_release_\${VERSION_MINOR}",
   enabled: yes
 }
 EOF
@@ -97,6 +97,8 @@ if [ "${HOSTNAME}" = "hal9000" ]; then
   echo 'hw.usb.uaudio.buffer_ms=1' >>/etc/sysctl.conf
   echo 'virtual_oss_enable="YES"' >${RCD}/virtual_oss
   echo 'virtual_oss_dsp="-S -i 8 -C 32 -c 32 -r 48000 -b 32 -s 4ms -f /dev/dsp4 -c 2 -d dsp -t dsp.ctl"' >>${RCD}/virtual_oss
+elif [ "${HOSTNAME}" = "tuxedo" ]; then
+  echo 'hw.acpi.lid_switch_state=S5' >>/etc/sysctl.conf
 fi
 
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
