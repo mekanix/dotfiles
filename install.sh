@@ -8,6 +8,7 @@ PACKAGES="\
   atril-lite \
   audacious-plugins \
   audacity \
+  automount \
   birdtray \
   ccache \
   debootstrap \
