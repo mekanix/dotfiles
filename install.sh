@@ -58,6 +58,18 @@ FreeBSD-base: {
 }
 EOF
 
+cat <<EOF >/usr/local/etc/pkg/repos/tilda.conf
+tilda: {
+    url: "https://pkg.tilda.center/packages/${ABI}-local",
+    signature_type: "pubkey",
+    pubkey: "/usr/local/etc/pkg.tilda.center.cert",
+    enabled: yes,
+    priority: 100
+}
+EOF
+
+fetch --output="/usr/local/etc/ssl/pkg.tilda.center.cert" https://pkg.tilda.center/certs/pkg.tilda.center.cert
+
 pkg install -y ${PACKAGES}
 
 pw group mod realtime -m meka
