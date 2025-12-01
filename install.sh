@@ -45,6 +45,15 @@ PACKAGES="\
   xsel-conrad \
 "
 
+cat <<EOF >/usr/local/etc/pkg/repos/FreeBSD.conf
+FreeBSD-ports: { url: "pkg+https://pkg.FreeBSD.org/${ABI}/latest" }
+FreeBSD-ports-kmods: { url: "pkg+https://pkg.FreeBSD.org/${ABI}/kmods_latest_${VERSION_MINOR}" }
+FreeBSD-base: {
+  url: "pkg+https://pkg.FreeBSD.org/${ABI}/base_release_${VERSION_MINOR}",
+  enabled: yes
+}
+EOF
+
 pkg install -y ${PACKAGES}
 
 pw group mod realtime -m meka
