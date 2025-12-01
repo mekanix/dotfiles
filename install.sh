@@ -26,9 +26,11 @@ PACKAGES="\
   keepassxc \
   libreoffice \
   liferea \
+  llvm \
   mpv \
   neovim \
   nmap \
+  npm \
   podman-suite \
   pv \
   reggae \
@@ -44,6 +46,7 @@ PACKAGES="\
   xautolock \
   xorg \
   xsel-conrad \
+  yarn \
 "
 
 cat <<EOF >/usr/local/etc/pkg/repos/FreeBSD.conf
