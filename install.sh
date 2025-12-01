@@ -107,3 +107,6 @@ fi
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
 echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote" >/usr/local/bin/slack
 chmod +x /usr/local/bin/slack
+
+echo "There are few things to set up in the GUI:"
+echo "  - firefox: set media.cubeb.backend=oss in about:config"
