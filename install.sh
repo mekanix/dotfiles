@@ -120,8 +120,12 @@ elif [ "${HOSTNAME}" = "tuxedo" ]; then
 fi
 
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
-echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote" >/usr/local/bin/slack
+echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/slack
+echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/viber/Viber --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/viber
+echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/zoom/ZoomLauncher --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/zoom
 chmod +x /usr/local/bin/slack
+chmod +x /usr/local/bin/viber
+chmod +x /usr/local/bin/zoom
 
 echo "There are few things to set up in the GUI:"
 echo "  - firefox: set media.cubeb.backend=oss in about:config"
