@@ -33,6 +33,7 @@ PACKAGES="\
   npm \
   podman-suite \
   pv \
+  python \
   reggae \
   ripgrep \
   rofi \
@@ -82,6 +83,7 @@ echo 'slim_enable="YES"' >${RCD}/slim
 echo 'syncthing_enable="YES"' >${RCD}/syncthing
 echo 'syncthing_user="meka"' >>${RCD}/syncthing
 echo 'podman_enable="YES"' >${RCD}/podman
+echo 'podman_service_enable="YES"' >${RCD}/podman_service
 echo 'ubuntu_enable="YES"' >${RCD}/ubuntu
 echo 'pf_enable="YES"' >${RCD}/pf
 echo 'pflog_enable="YES"' >${RCD}/pflog

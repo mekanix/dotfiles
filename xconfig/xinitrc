@@ -20,7 +20,7 @@ slack --startup &
 birdtray &
 liferea &
 signal-desktop &
-# zoom &
+zoom &
 # (discord & sleep 5 && wmctrl -c "discord") &
 
 # Keyboard setup
