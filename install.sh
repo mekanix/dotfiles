@@ -26,9 +26,11 @@ PACKAGES="\
   keepassxc \
   libreoffice \
   liferea \
+  llvm \
   mpv \
   neovim \
   nmap \
+  npm \
   podman-suite \
   pv \
   reggae \
@@ -44,6 +46,7 @@ PACKAGES="\
   xautolock \
   xorg \
   xsel-conrad \
+  yarn \
 "
 
 cat <<EOF >/usr/local/etc/pkg/repos/FreeBSD.conf
@@ -54,6 +57,18 @@ FreeBSD-base: {
   enabled: yes
 }
 EOF
+
+cat <<EOF >/usr/local/etc/pkg/repos/tilda.conf
+tilda: {
+    url: "https://pkg.tilda.center/packages/${ABI}-local",
+    signature_type: "pubkey",
+    pubkey: "/usr/local/etc/pkg.tilda.center.cert",
+    enabled: yes,
+    priority: 100
+}
+EOF
+
+fetch --output="/usr/local/etc/ssl/pkg.tilda.center.cert" https://pkg.tilda.center/certs/pkg.tilda.center.cert
 
 pkg install -y ${PACKAGES}
 
@@ -104,3 +119,6 @@ fi
 ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
 echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote" >/usr/local/bin/slack
 chmod +x /usr/local/bin/slack
+
+echo "There are few things to set up in the GUI:"
+echo "  - firefox: set media.cubeb.backend=oss in about:config"
