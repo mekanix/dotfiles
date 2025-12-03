@@ -1,4 +1,5 @@
-i3status/config
 alacritty/alacritty.toml
+i3blocks/config
+i3status/config
 fish/conf.d/
 fish/functions/

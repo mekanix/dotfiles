@@ -1,0 +1,30 @@
+[disk]
+command=zfs list zroot | grep '^zroot' | awk '{print $3}'
+interval=20
+
+[ipv4]
+command=ifconfig ix1 | grep 'inet ' | awk '{print $2}'
+interval=10
+color=#91E7FF
+
+[ipv6]
+command=ifconfig ix1 | grep 'inet6 ' | grep 'prefixlen 128' | awk '{print $2}'
+interval=10
+color=#91E78E
+
+[battery]
+command=battery.sh
+interval=10
+
+[load]
+command=load.sh
+interval=10
+
+[temperature]
+command=temp.sh
+interval=10
+
+[time]
+command=date.sh
+interval=20
+color=#BBBBFF
