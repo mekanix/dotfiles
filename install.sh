@@ -43,6 +43,7 @@ PACKAGES="\
   thunderbird \
   unclutter \
   virtual_oss_bluetooth \
+  wmctrl-fork \
   xautolock \
   xorg \
   xsel-conrad \
