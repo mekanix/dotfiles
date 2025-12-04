@@ -14,6 +14,7 @@ PACKAGES="\
   debootstrap \
   drm-kmod \
   dunst \
+  eq10q-lv2 \
   fd-find \
   firefox \
   fish \
@@ -23,17 +24,21 @@ PACKAGES="\
   git-lite \
   i3 \
   i3blocks \
+  jack_umidi \
   keepassxc \
   libreoffice \
   liferea \
   llvm \
+  lsp-plugins-lv2 \
   mpv \
   neovim \
+  neuralrack-lv2 \
   nmap \
   npm \
   podman-suite \
   pv \
   python \
+  qjackctl \
   reggae \
   ripgrep \
   rofi \
