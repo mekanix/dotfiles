@@ -48,6 +48,7 @@ PACKAGES="\
   slim \
   slock \
   syncthing \
+  terraform \
   thunderbird \
   unclutter \
   virtual_oss_bluetooth \
