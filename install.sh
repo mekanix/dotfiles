@@ -24,6 +24,7 @@ PACKAGES="\
   git-lite \
   i3 \
   i3blocks \
+  iwmbt-firmware \
   jack_umidi \
   keepassxc \
   libreoffice \
@@ -43,6 +44,7 @@ PACKAGES="\
   ripgrep \
   rofi \
   rust \
+  rust-analyzer \
   slim \
   slock \
   syncthing \
