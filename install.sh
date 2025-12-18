@@ -69,14 +69,17 @@ EOF
 
 cat <<EOF >/usr/local/etc/pkg/repos/tilda.conf
 tilda: {
-    url: "https://pkg.tilda.center/packages/${ABI}-local",
+    url: "https://pkg.tilda.center/packages/\${ABI}-local",
     signature_type: "pubkey",
-    pubkey: "/usr/local/etc/pkg.tilda.center.cert",
+    pubkey: "/usr/local/etc/ssl/pkg.tilda.center.cert",
     enabled: yes,
     priority: 100
 }
 EOF
 
+if [ ! -d "/usr/local/etc/ssl" ]; then
+  mkdir -p "/usr/local/etc/ssl"
+fi
 fetch --output="/usr/local/etc/ssl/pkg.tilda.center.cert" https://pkg.tilda.center/certs/pkg.tilda.center.cert
 
 pkg install -y ${PACKAGES}
