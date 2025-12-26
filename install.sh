@@ -5,6 +5,7 @@ RCD="/etc/rc.conf.d"
 PACKAGES="\
   alacritty \
   ardour \
+  ario \
   atril-lite \
   audacious-plugins \
   audacity \

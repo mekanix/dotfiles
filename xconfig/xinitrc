@@ -15,12 +15,12 @@ unclutter &
 xautolock -time 10 -locker slock &
 (sleep 2 && xsetroot) &
 gajim &
-slack --startup &
+# slack --startup &
 (viber & sleep 2 && wmctrl -c "Viber") &
 birdtray &
 liferea &
 signal-desktop &
-zoom &
+# zoom &
 # (discord & sleep 5 && wmctrl -c "discord") &
 
 # Keyboard setup
