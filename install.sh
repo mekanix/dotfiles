@@ -44,6 +44,8 @@ PACKAGES="\
   reggae \
   ripgrep \
   rofi \
+  rsync \
+  ruff \
   rust \
   rust-analyzer \
   slim \
@@ -51,6 +53,7 @@ PACKAGES="\
   syncthing \
   terraform \
   thunderbird \
+  tmux \
   unclutter \
   virtual_oss_bluetooth \
   wmctrl-fork \
