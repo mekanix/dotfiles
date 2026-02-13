@@ -23,6 +23,8 @@ PACKAGES="\
   geeqie \
   gimp \
   git-lite \
+  gohugo \
+  hs-pandoc \
   i3 \
   i3blocks \
   iwmbt-firmware \
@@ -39,6 +41,7 @@ PACKAGES="\
   npm \
   podman-suite \
   pv \
+  py311-weasyprint \
   python \
   qjackctl \
   reggae \
