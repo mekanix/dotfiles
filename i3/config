@@ -135,3 +135,6 @@ bindsym Control+Shift+grave exec dunstctl close
 assign [class="Chromium-browser"] 2
 assign [class="Firefox"] 2
 assign [class="firefox"] 2
+
+# Open plugin UIs as floating windows at their natural size
+for_window [title="(?i).*(clap|lv2|vst3).*"] floating enable
