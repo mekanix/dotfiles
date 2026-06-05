@@ -1,11 +1,12 @@
 #!/bin/sh
 
-sleep 8
-alacritty --class weechat -e weechat &
+dunst &
+
+sleep 3
+
+gajim &
 keepassxc &
-quiterss &
-syncthing &
-dino &
-~/bin/mail.sh
-slack &
-viber &
+signal-desktop &
+thunderbird &
+(viber & sleep 5 && swaymsg '[app_id="viber"] kill') &
+(liferea & sleep 5 && swaymsg '[app_id="net.sourceforge.liferea"] kill') &

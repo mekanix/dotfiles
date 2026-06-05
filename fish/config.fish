@@ -7,3 +7,20 @@ set -x PAGER less
 if status --is-interactive
   set -x SHELL (which fish)
 end
+
+if status is-login
+  if [ -z "$DISPLAY" ]; and [ (tty) = "/dev/ttyv8" ]
+    set -xg BROWSER ~/bin/browser.sh
+    set -xg PATH "$HOME/bin:$PATH"
+    eval (ssh-agent -c)
+
+    export XDG_RUNTIME_DIR=/var/run/user/$(id -u)
+    if [ ! -d "$XDG_RUNTIME_DIR" ]
+        mkdir -p $XDG_RUNTIME_DIR
+        chmod 700 $XDG_RUNTIME_DIR
+    end
+    export XDG_CURRENT_DESKTOP=sway
+
+    exec dbus-run-session sway
+  end
+end

@@ -4,18 +4,15 @@ HOSTNAME="$(hostname -s)"
 RCD="/etc/rc.conf.d"
 PACKAGES="\
   alacritty \
-  ardour \
   ario \
-  atril-lite \
+  evince-lite \
   audacious-plugins \
   audacity \
   automount \
-  birdtray \
   ccache \
   debootstrap \
-  drm-kmod \
+  drm-kmod-latest \
   dunst \
-  eq10q-lv2 \
   fd-find \
   firefox \
   fish \
@@ -33,13 +30,10 @@ PACKAGES="\
   libreoffice \
   liferea \
   llvm \
-  lsp-plugins-lv2 \
   mpv \
   neovim \
-  neuralrack-lv2 \
   nmap \
   npm \
-  podman-suite \
   pv \
   py311-weasyprint \
   python \
@@ -52,18 +46,15 @@ PACKAGES="\
   rust \
   rust-analyzer \
   slim \
-  slock \
   syncthing \
-  terraform \
   thunderbird \
   tmux \
   unclutter \
   virtual_oss_bluetooth \
+  wl-clipboard \
   wmctrl-fork \
-  xautolock \
   xorg \
-  xsel-conrad \
-  yarn \
+  zenity \
 "
 
 cat <<EOF >/usr/local/etc/pkg/repos/FreeBSD.conf
@@ -75,21 +66,6 @@ FreeBSD-base: {
 }
 EOF
 
-cat <<EOF >/usr/local/etc/pkg/repos/tilda.conf
-tilda: {
-    url: "https://pkg.tilda.center/packages/\${ABI}-local",
-    signature_type: "pubkey",
-    pubkey: "/usr/local/etc/ssl/pkg.tilda.center.cert",
-    enabled: yes,
-    priority: 100
-}
-EOF
-
-if [ ! -d "/usr/local/etc/ssl" ]; then
-  mkdir -p "/usr/local/etc/ssl"
-fi
-fetch --output="/usr/local/etc/ssl/pkg.tilda.center.cert" https://pkg.tilda.center/certs/pkg.tilda.center.cert
-
 pkg install -y ${PACKAGES}
 
 pw group mod realtime -m meka
@@ -97,12 +73,9 @@ pw group mod video -m meka
 
 echo 'dbus_enable="YES"' >${RCD}/dbus
 echo 'kld_list="amdgpu amdtemp mac_do mac_priority"' >${RCD}/kld
-echo 'slim_enable="YES"' >${RCD}/slim
 echo 'syncthing_enable="YES"' >${RCD}/syncthing
 echo 'syncthing_user="meka"' >>${RCD}/syncthing
-echo 'podman_enable="YES"' >${RCD}/podman
-echo 'podman_service_enable="YES"' >${RCD}/podman_service
-echo 'ubuntu_enable="YES"' >${RCD}/ubuntu
+echo 'seatd_enable="YES"' >>${RCD}/seatd
 echo 'pf_enable="YES"' >${RCD}/pf
 echo 'pflog_enable="YES"' >${RCD}/pflog
 
@@ -132,18 +105,18 @@ if [ "${HOSTNAME}" = "hal9000" ]; then
   echo 'kern.timecounter.alloweddeviation=0' >>/etc/sysctl.conf
   echo 'hw.usb.uaudio.buffer_ms=1' >>/etc/sysctl.conf
   echo 'virtual_oss_enable="YES"' >${RCD}/virtual_oss
-  echo 'virtual_oss_dsp="-S -i 8 -C 32 -c 32 -r 48000 -b 32 -s 4ms -f /dev/dsp4 -c 2 -d dsp -t dsp.ctl"' >>${RCD}/virtual_oss
+  echo 'virtual_oss_dsp="-S -i 8 -C 32 -c 32 -r 48000 -b 32 -s 4ms -f /dev/dsp5 -c 2 -d dsp -t dsp.ctl"' >>${RCD}/virtual_oss
 elif [ "${HOSTNAME}" = "tuxedo" ]; then
   echo 'hw.acpi.lid_switch_state=S5' >>/etc/sysctl.conf
 fi
 
-ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
-echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/slack
-echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/viber/Viber --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/viber
-echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/zoom/ZoomLauncher --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/zoom
-chmod +x /usr/local/bin/slack
-chmod +x /usr/local/bin/viber
-chmod +x /usr/local/bin/zoom
+# ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
+# echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/slack
+# echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/viber/Viber --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/viber
+# echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/zoom/ZoomLauncher --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/zoom
+# chmod +x /usr/local/bin/slack
+# chmod +x /usr/local/bin/viber
+# chmod +x /usr/local/bin/zoom
 
 echo "There are few things to set up in the GUI:"
 echo "  - firefox: set media.cubeb.backend=oss in about:config"
