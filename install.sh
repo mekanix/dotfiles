@@ -5,7 +5,6 @@ RCD="/etc/rc.conf.d"
 PACKAGES="\
   alacritty \
   ario \
-  evince-lite \
   audacious-plugins \
   audacity \
   automount \
@@ -13,6 +12,7 @@ PACKAGES="\
   debootstrap \
   drm-kmod-latest \
   dunst \
+  evince-lite \
   fd-find \
   firefox \
   fish \
@@ -21,6 +21,7 @@ PACKAGES="\
   gimp \
   git-lite \
   gohugo \
+  grim \
   hs-pandoc \
   i3 \
   i3blocks \
@@ -46,6 +47,7 @@ PACKAGES="\
   rust \
   rust-analyzer \
   slim \
+  slurp \
   syncthing \
   thunderbird \
   tmux \
