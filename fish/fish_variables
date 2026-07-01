@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
+SETUVAR _fisher_jorgebucaran_2F_hydro_files:\x7e/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_prompt\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/hydro\x2efish
 SETUVAR _fisher_mekanix_2F_fish_2D_ccache_files:\x7e/\x2econfig/fish/conf\x2ed/ccache\x2efish
 SETUVAR _fisher_mekanix_2F_fish_2D_e_files:\x7e/\x2econfig/fish/functions/e\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/editor\x2efish
 SETUVAR _fisher_mekanix_2F_fish_2D_fzf_files:\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish
@@ -10,5 +11,6 @@ SETUVAR _fisher_mekanix_2F_fish_2D_mutt_files:\x7e/\x2econfig/fish/functions/mut
 SETUVAR _fisher_mekanix_2F_fish_2D_pager_files:\x7e/\x2econfig/fish/conf\x2ed/pager\x2efish
 SETUVAR _fisher_mekanix_2F_fish_2D_path_files:\x7e/\x2econfig/fish/conf\x2ed/path\x2efish
 SETUVAR _fisher_mekanix_2F_vibrant_files:\x7e/\x2econfig/fish/functions/fish_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_title\x2efish
-SETUVAR _fisher_plugins:mekanix/fish\x2dccache\x1emekanix/fish\x2de\x1emekanix/fish\x2dl\x1emekanix/fish\x2dmutt\x1emekanix/fish\x2dpager\x1emekanix/fish\x2dpath\x1emekanix/fish\x2dfzf\x1emekanix/vibrant\x1ejorgebucaran/autopair\x2efish
+SETUVAR _fisher_plugins:mekanix/fish\x2dccache\x1emekanix/fish\x2de\x1emekanix/fish\x2dl\x1emekanix/fish\x2dmutt\x1emekanix/fish\x2dpager\x1emekanix/fish\x2dpath\x1emekanix/fish\x2dfzf\x1emekanix/vibrant\x1ejorgebucaran/autopair\x2efish\x1ejorgebucaran/hydro
 SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR _hydro_git_59552:master\u2022\x20
