@@ -6,6 +6,12 @@ set -x PAGER less
 set -x fish_prompt_pwd_dir_length 256
 set -x hydro_color_pwd 6a9fb5
 set -x hydro_color_git 75b5aa
+set -x hydro_color_start f4bf75
+set -x hydro_cmd_duration_threshold 999999999999
+
+if set -q SSH_TTY; or set -q SUDO_USER; or test (id -u) -eq 0
+ set -g hydro_symbol_start "$USER@"(prompt_hostname)" "
+end
 
 if status --is-interactive
   set -x SHELL (which fish)
