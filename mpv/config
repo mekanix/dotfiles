@@ -1,4 +1,5 @@
 ao=oss
+vo=gpu
 audio-channels=stereo
 alang=eng
 slang=eng
