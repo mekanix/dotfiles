@@ -9,10 +9,9 @@ cd $PROJECT_ROOT
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 fisher install \
   jorgebucaran/autopair.fish \
-  meka/hydro
+  mekanix/hydro \
   mekanix/fish-ccache \
   mekanix/fish-fzf \
   mekanix/fish-l \
   mekanix/fish-pager \
-  mekanix/fish-path \
-  mekanix/vibrant \
+  mekanix/fish-path
