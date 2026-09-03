@@ -18,8 +18,6 @@ end
 if status is-login
   if [ -z "$DISPLAY" ]; and [ (tty) = "/dev/ttyv8" ]
     set -xg BROWSER ~/bin/browser.sh
-    set -xg PATH "$HOME/bin:$PATH"
-    set -xg RUST_BACKTRACE 1
     eval (ssh-agent -c)
 
     export XDG_RUNTIME_DIR=/var/run/user/$(id -u)
