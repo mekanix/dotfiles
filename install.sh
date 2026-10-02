@@ -36,13 +36,13 @@ PACKAGES="\
   pv \
   python \
   qjackctl \
-  reggae \
   ripgrep \
   rofi \
   rsync \
   ruff \
   rust \
   rust-analyzer \
+  rustup-init \
   slim \
   slurp \
   sway \
