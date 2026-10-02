@@ -37,7 +37,6 @@ PACKAGES="\
   python \
   qjackctl \
   ripgrep \
-  rofi \
   rsync \
   ruff \
   rust \
