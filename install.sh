@@ -45,6 +45,8 @@ PACKAGES="\
   slim \
   slurp \
   sway \
+  swayidle \
+  swaylock \
   syncthing \
   thunderbird \
   tmux \

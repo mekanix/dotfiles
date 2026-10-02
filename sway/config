@@ -114,21 +114,18 @@ bindsym $mod+d exec wofi --show run
 bindsym Control+grave exec dunstctl history-pop
 bindsym Control+Shift+grave exec dunstctl close
 
-# Keyboard setup (was setxkbmap in ~/.xinitrc)
 input * {
         xkb_layout us,hr
         xkb_options grp:lswitch
 }
 
-# Wayland apps are matched by app_id, X11 apps (XWayland) by class
-assign [class="Chromium-browser"] 2
 assign [app_id="chromium-browser"] 2
-assign [class="Firefox"] 2
-assign [class="firefox"] 2
 assign [app_id="firefox"] 2
+assign [app_id="thunderbird"] 8
 
-# Open plugin UIs as floating windows at their natural size
-#for_window [title="(?i).*(clap|lv2|vst3).*"] floating enable
+exec swayidle -w \
+    timeout 590 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"'
 
-# Start the desktop apps (dunst, keepassxc, signal-desktop, ...)
 exec ~/bin/sway-startup.sh
