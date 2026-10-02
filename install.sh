@@ -10,7 +10,7 @@ PACKAGES="\
   automount \
   ccache \
   debootstrap \
-  drm-kmod-latest \
+  drm-latest-kmod \
   dunst \
   evince-lite \
   fd-find \
@@ -23,8 +23,6 @@ PACKAGES="\
   gohugo \
   grim \
   hs-pandoc \
-  i3 \
-  i3blocks \
   iwmbt-firmware \
   jack_umidi \
   keepassxc \
@@ -36,7 +34,6 @@ PACKAGES="\
   nmap \
   npm \
   pv \
-  py311-weasyprint \
   python \
   qjackctl \
   reggae \
@@ -48,13 +45,16 @@ PACKAGES="\
   rust-analyzer \
   slim \
   slurp \
+  sway \
   syncthing \
   thunderbird \
   tmux \
   unclutter \
   virtual_oss_bluetooth \
+  waybar \
   wl-clipboard \
   wmctrl-fork \
+  wofi \
   xorg \
   zenity \
 "
