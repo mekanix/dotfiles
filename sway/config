@@ -115,7 +115,7 @@ bindsym Control+grave exec dunstctl history-pop
 bindsym Control+Shift+grave exec dunstctl close
 
 # Keyboard setup (was setxkbmap in ~/.xinitrc)
-input type:keyboard {
+input * {
         xkb_layout us,hr
         xkb_options grp:lswitch
 }
