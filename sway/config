@@ -123,6 +123,8 @@ assign [app_id="chromium-browser"] 2
 assign [app_id="firefox"] 2
 assign [app_id="thunderbird"] 8
 
+seat "*" hide_cursor 10000
+
 exec swayidle -w \
     timeout 590 'swaylock -f -c 000000' \
     timeout 600 'swaymsg "output * dpms off"' \
