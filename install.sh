@@ -33,6 +33,8 @@ PACKAGES="\
   neovim \
   nmap \
   npm \
+  portclippy \
+  portfmt \
   pv \
   python \
   qjackctl \
