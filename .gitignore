@@ -3,3 +3,4 @@ i3blocks/config
 i3status/config
 fish/conf.d/
 fish/functions/
+waybar/config.jsonc
