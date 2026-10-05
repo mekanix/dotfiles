@@ -28,6 +28,7 @@ PACKAGES="\
   keepassxc \
   libreoffice \
   liferea \
+  linux-rl9 \
   llvm \
   mpv \
   neovim \
@@ -115,13 +116,38 @@ elif [ "${HOSTNAME}" = "tuxedo" ]; then
   echo 'hw.acpi.lid_switch_state=S5' >>/etc/sysctl.conf
 fi
 
-# ln -fs /compat/ubuntu/bin/X32-Edit /usr/local/bin/X32-Edit
-# echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/slack
-# echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/viber/Viber --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/viber
+echo -e "#!/bin/sh\n\n/compat/ubuntu/usr/bin/slack --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/slack
+chmod +x /usr/local/bin/slack
+
+echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/viber/Viber --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/viber
+chmod +x /usr/local/bin/viber
+
 # echo -e "#!/bin/sh\n\n/compat/ubuntu/opt/zoom/ZoomLauncher --no-sandbox --no-zygote --enable-crashpad $@" >/usr/local/bin/zoom
-# chmod +x /usr/local/bin/slack
-# chmod +x /usr/local/bin/viber
 # chmod +x /usr/local/bin/zoom
+
+cat <<EOF >/usr/local/bin/discord
+#!/bin/sh
+
+# Kill leftover Discord processes that block startup
+pkill -f 'discord/app-' 2>/dev/null
+sleep 1
+# Wipe volatile caches (corrupt easily under the linuxulator -> stuck on
+# "Starting..."). Login and settings live in Local Storage/Cookies and are
+# kept.
+cfg=${XDG_CONFIG_HOME:-$HOME/.config}/discord
+rm -rf "$cfg/Cache" "$cfg/Code Cache" "$cfg/GPUCache" "$cfg/Service Worker" \
+       "$cfg/DawnGraphiteCache" "$cfg/DawnWebGPUCache"
+
+# Start Discord inside a tmux session so it isn't tied to the launching shell
+# (backgrounding it loses the window/handoff and leaves corrupt state behind).
+if tmux has-session -t discord 2>/dev/null; then
+    tmux attach -t discord
+fi
+tmux new-session -d -s discord "/compat/linux/usr/bin/discord --no-sandbox --no-zygote"
+echo "Discord starting in tmux session 'discord'."
+echo "Attach to its log with: tmux attach -t discord"
+EOF
+chmod +x /usr/local/bin/discord
 
 echo "There are few things to set up in the GUI:"
 echo "  - firefox: set media.cubeb.backend=oss in about:config"
