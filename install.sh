@@ -51,6 +51,7 @@ PACKAGES="\
   sway \
   swayidle \
   swaylock \
+  swtpm \
   syncthing \
   thunderbird \
   tmux \
