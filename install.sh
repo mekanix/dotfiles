@@ -41,6 +41,7 @@ PACKAGES="\
   qjackctl \
   ripgrep \
   rsync \
+  rtorrent \
   ruff \
   rust \
   rust-analyzer \
