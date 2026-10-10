@@ -34,6 +34,7 @@ PACKAGES="\
   neovim \
   nmap \
   npm \
+  pkg-provides \
   portclippy \
   portfmt \
   pv \
