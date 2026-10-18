@@ -2,6 +2,7 @@
 
 HOSTNAME="$(hostname -s)"
 RCD="/etc/rc.conf.d"
+PYTHON_PREFIX="py312"
 PACKAGES="\
   alacritty \
   ario \
@@ -35,6 +36,8 @@ PACKAGES="\
   nmap \
   npm \
   pkg-provides \
+  ${PYTHON_PREFIX}-ipython \
+  ${PYTHON_PREFIX}-weasyprint \
   portclippy \
   portfmt \
   pv \
