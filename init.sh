@@ -7,3 +7,5 @@ cd "${REPO_ROOT}"
 for config_dir in alacritty bin fish git gtkrc i3 i3blocks jack mpv npm sway tmux vim waybar xdg; do
     ${config_dir}/bin/init.sh || true
 done
+
+mkdir ~/screenshots

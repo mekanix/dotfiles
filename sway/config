@@ -108,8 +108,8 @@ focus_follows_mouse no
 
 bindsym $mod+b exec ~/bin/browser.sh
 bindsym $mod+a exec "rtprio 20 audacious"
-
 bindsym $mod+d exec wofi --show run
+bindsym $mod+p exec grim -g "$(slurp)" ~/screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png
 
 bindsym Control+grave exec dunstctl history-pop
 bindsym Control+Shift+grave exec dunstctl close
