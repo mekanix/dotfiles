@@ -116,7 +116,7 @@ bindsym Control+Shift+grave exec dunstctl close
 
 input * {
         xkb_layout us,hr
-        xkb_options grp:lswitch
+        xkb_options grp:lswitch,caps:escape
 }
 
 assign [app_id="chromium-browser"] 2
