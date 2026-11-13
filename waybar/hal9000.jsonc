@@ -19,8 +19,8 @@
         "mpd",
         "idle_inhibitor",
         // "pulseaudio",
-        "network",
-        "power-profiles-daemon",
+        // "network",
+        // "power-profiles-daemon",
         "custom/ipv4",
         "custom/ipv6",
         "custom/disk",
@@ -85,7 +85,8 @@
         "tooltip-format": "{app}: {title}"
     },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "server": "mpd.nsd1.sys.it.com",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
         "unknown-tag": "N/A",
